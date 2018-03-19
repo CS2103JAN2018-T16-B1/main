@@ -84,6 +84,30 @@ public class AddressBookParser {
         case RedoCommand.COMMAND_WORD:
             return new RedoCommand();
 
+        case AddCommand.COMMAND_ALIAS:
+            return new AddCommandParser().parse(arguments);
+
+        case SelectCommand.COMMAND_ALIAS:
+            return new SelectCommandParser().parse(arguments);
+
+        case DeleteCommand.COMMAND_ALIAS:
+            return new DeleteCommandParser().parse(arguments);
+
+        case ClearCommand.COMMAND_ALIAS:
+            return new ClearCommand();
+
+        case FindCommand.COMMAND_ALIAS:
+            return new FindCommandParser().parse(arguments);
+
+        case ListCommand.COMMAND_ALIAS:
+            return new ListCommand();
+
+        case UndoCommand.COMMAND_ALIAS:
+            return new UndoCommand();
+
+        case RedoCommand.COMMAND_ALIAS:
+            return new RedoCommand();
+
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
         }
