@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Book with missing title field -->
+<book>
+    <phone>9482424</phone>
+    <availability>Borrowed</availability>
+    <address>4th street</address>
+    <tagged>friends</tagged>
+</book>

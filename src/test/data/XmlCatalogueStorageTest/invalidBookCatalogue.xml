@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalogue>
+    <!-- Book with invalid title field -->
+    <books>
+        <title>Ha!ns Mu@ster</title>
+        <phone isPrivate="false">9482424</phone>
+        <availability isPrivate="false">Available</availability>
+        <address isPrivate="false">4th street</address>
+    </books>
+</catalogue>

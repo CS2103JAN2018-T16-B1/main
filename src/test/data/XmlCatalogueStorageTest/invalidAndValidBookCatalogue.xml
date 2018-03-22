@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalogue>
+    <!-- Valid Book -->
+    <books>
+        <title>Hans Muster</title>
+        <phone isPrivate="false">9482424</phone>
+        <availability isPrivate="false">Available</availability>
+        <address isPrivate="false">4th street</address>
+    </books>
+    <!-- Book with invalid phone field -->
+    <books>
+        <title>Hans Muster</title>
+        <phone isPrivate="false">948asdf2424</phone>
+        <availability isPrivate="false">Available</availability>
+        <address isPrivate="false">4th street</address>
+    </books>
+</catalogue>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Catalogue save file which contains the same Book values as in
+{@code TypicalBooks#getTypicalCatalogue()}-->
+<catalogue>
+    <books>
+        <title>Alice Pauline</title>
+        <phone>85355255</phone>
+        <availability>Available</availability>
+        <address>123, Jurong West Ave 6, #08-111</address>
+        <tagged>friends</tagged>
+    </books>
+    <books>
+        <title>Benson Meier</title>
+        <phone>98765432</phone>
+        <availability>Available</availability>
+        <address>311, Clementi Ave 2, #02-25</address>
+        <tagged>owesMoney</tagged>
+        <tagged>friends</tagged>
+    </books>
+    <books>
+        <title>Carl Kurz</title>
+        <phone>95352563</phone>
+        <availability>Available</availability>
+        <address>wall street</address>
+    </books>
+    <books>
+        <title>Daniel Meier</title>
+        <phone>87652533</phone>
+        <availability>Available</availability>
+        <address>10th street</address>
+    </books>
+    <books>
+        <title>Elle Meyer</title>
+        <phone>9482224</phone>
+        <availability>Available</availability>
+        <address>michegan ave</address>
+    </books>
+    <books>
+        <title>Fiona Kunz</title>
+        <phone>9482427</phone>
+        <availability>Available</availability>
+        <address>little tokyo</address>
+    </books>
+    <books>
+        <title>George Best</title>
+        <phone>9482442</phone>
+        <availability>Available</availability>
+        <address>4th street</address>
+    </books>
+    <tags>friends</tags>
+    <tags>owesMoney</tags>
+</catalogue>

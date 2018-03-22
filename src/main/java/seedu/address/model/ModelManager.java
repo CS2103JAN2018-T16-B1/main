@@ -11,91 +11,91 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.ComponentManager;
 import seedu.address.commons.core.LogsCenter;
-import seedu.address.commons.events.model.AddressBookChangedEvent;
-import seedu.address.model.person.Person;
-import seedu.address.model.person.exceptions.DuplicatePersonException;
-import seedu.address.model.person.exceptions.PersonNotFoundException;
+import seedu.address.commons.events.model.CatalogueChangedEvent;
+import seedu.address.model.book.Book;
+import seedu.address.model.book.exceptions.DuplicateBookException;
+import seedu.address.model.book.exceptions.BookNotFoundException;
 
 /**
- * Represents the in-memory model of the address book data.
+ * Represents the in-memory model of the catalogue data.
  * All changes to any model should be synchronized.
  */
 public class ModelManager extends ComponentManager implements Model {
     private static final Logger logger = LogsCenter.getLogger(ModelManager.class);
 
-    private final AddressBook addressBook;
-    private final FilteredList<Person> filteredPersons;
+    private final Catalogue catalogue;
+    private final FilteredList<Book> filteredBooks;
 
     /**
-     * Initializes a ModelManager with the given addressBook and userPrefs.
+     * Initializes a ModelManager with the given catalogue and userPrefs.
      */
-    public ModelManager(ReadOnlyAddressBook addressBook, UserPrefs userPrefs) {
+    public ModelManager(ReadOnlyCatalogue catalogue, UserPrefs userPrefs) {
         super();
-        requireAllNonNull(addressBook, userPrefs);
+        requireAllNonNull(catalogue, userPrefs);
 
-        logger.fine("Initializing with address book: " + addressBook + " and user prefs " + userPrefs);
+        logger.fine("Initializing with catalogue: " + catalogue + " and user prefs " + userPrefs);
 
-        this.addressBook = new AddressBook(addressBook);
-        filteredPersons = new FilteredList<>(this.addressBook.getPersonList());
+        this.catalogue = new Catalogue(catalogue);
+        filteredBooks = new FilteredList<>(this.catalogue.getBookList());
     }
 
     public ModelManager() {
-        this(new AddressBook(), new UserPrefs());
+        this(new Catalogue(), new UserPrefs());
     }
 
     @Override
-    public void resetData(ReadOnlyAddressBook newData) {
-        addressBook.resetData(newData);
-        indicateAddressBookChanged();
+    public void resetData(ReadOnlyCatalogue newData) {
+        catalogue.resetData(newData);
+        indicateCatalogueChanged();
     }
 
     @Override
-    public ReadOnlyAddressBook getAddressBook() {
-        return addressBook;
+    public ReadOnlyCatalogue getCatalogue() {
+        return catalogue;
     }
 
     /** Raises an event to indicate the model has changed */
-    private void indicateAddressBookChanged() {
-        raise(new AddressBookChangedEvent(addressBook));
+    private void indicateCatalogueChanged() {
+        raise(new CatalogueChangedEvent(catalogue));
     }
 
     @Override
-    public synchronized void deletePerson(Person target) throws PersonNotFoundException {
-        addressBook.removePerson(target);
-        indicateAddressBookChanged();
+    public synchronized void deleteBook(Book target) throws BookNotFoundException {
+        catalogue.removeBook(target);
+        indicateCatalogueChanged();
     }
 
     @Override
-    public synchronized void addPerson(Person person) throws DuplicatePersonException {
-        addressBook.addPerson(person);
-        updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
-        indicateAddressBookChanged();
+    public synchronized void addBook(Book book) throws DuplicateBookException {
+        catalogue.addBook(book);
+        updateFilteredBookList(PREDICATE_SHOW_ALL_BOOKS);
+        indicateCatalogueChanged();
     }
 
     @Override
-    public void updatePerson(Person target, Person editedPerson)
-            throws DuplicatePersonException, PersonNotFoundException {
-        requireAllNonNull(target, editedPerson);
+    public void updateBook(Book target, Book editedBook)
+            throws DuplicateBookException, BookNotFoundException {
+        requireAllNonNull(target, editedBook);
 
-        addressBook.updatePerson(target, editedPerson);
-        indicateAddressBookChanged();
+        catalogue.updateBook(target, editedBook);
+        indicateCatalogueChanged();
     }
 
-    //=========== Filtered Person List Accessors =============================================================
+    //=========== Filtered Book List Accessors =============================================================
 
     /**
-     * Returns an unmodifiable view of the list of {@code Person} backed by the internal list of
-     * {@code addressBook}
+     * Returns an unmodifiable view of the list of {@code Book} backed by the internal list of
+     * {@code catalogue}
      */
     @Override
-    public ObservableList<Person> getFilteredPersonList() {
-        return FXCollections.unmodifiableObservableList(filteredPersons);
+    public ObservableList<Book> getFilteredBookList() {
+        return FXCollections.unmodifiableObservableList(filteredBooks);
     }
 
     @Override
-    public void updateFilteredPersonList(Predicate<Person> predicate) {
+    public void updateFilteredBookList(Predicate<Book> predicate) {
         requireNonNull(predicate);
-        filteredPersons.setPredicate(predicate);
+        filteredBooks.setPredicate(predicate);
     }
 
     @Override
@@ -112,8 +112,8 @@ public class ModelManager extends ComponentManager implements Model {
 
         // state check
         ModelManager other = (ModelManager) obj;
-        return addressBook.equals(other.addressBook)
-                && filteredPersons.equals(other.filteredPersons);
+        return catalogue.equals(other.catalogue)
+                && filteredBooks.equals(other.filteredBooks);
     }
 
 }

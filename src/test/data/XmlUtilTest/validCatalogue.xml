@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalogue>
+    <books>
+        <title>Hans Muster</title>
+        <phone isPrivate="false">9482424</phone>
+        <availability isPrivate="false">Available</availability>
+        <address isPrivate="false">4th street</address>
+    </books>
+    <books>
+        <title>Ruth Mueller</title>
+        <phone isPrivate="false">87249245</phone>
+        <availability isPrivate="false">Available</availability>
+        <address isPrivate="false">81th street</address>
+    </books>
+    <books>
+        <title>Heinz Kurz</title>
+        <phone isPrivate="false">95352563</phone>
+        <availability isPrivate="false">Borrowed</availability>
+        <address isPrivate="false">wall street</address>
+    </books>
+    <books>
+        <title>Cornelia Meier</title>
+        <phone isPrivate="false">87652533</phone>
+        <availability isPrivate="false">Borrowed</availability>
+        <address isPrivate="false">10th street</address>
+    </books>
+    <books>
+        <title>Werner Meyer</title>
+        <phone isPrivate="false">9482224</phone>
+        <availability isPrivate="false">Reserved</availability>
+        <address isPrivate="false">michegan ave</address>
+    </books>
+    <books>
+        <title>Lydia Kunz</title>
+        <phone isPrivate="false">9482427</phone>
+        <availability isPrivate="false">Reserved</availability>
+        <address isPrivate="false">little tokyo</address>
+    </books>
+    <books>
+        <title>Anna Best</title>
+        <phone isPrivate="false">9482442</phone>
+        <availability isPrivate="false">Reserved</availability>
+        <address isPrivate="false">4th street</address>
+    </books>
+    <books>
+        <title>Stefan Meier</title>
+        <phone isPrivate="false">8482424</phone>
+        <availability isPrivate="false">Borrowed and Reserved</availability>
+        <address isPrivate="false">little india</address>
+    </books>
+    <books>
+        <title>Martin Mueller</title>
+        <phone isPrivate="false">8482131</phone>
+        <availability isPrivate="false">Borrowed and Reserved</availability>
+        <address isPrivate="false">chicago ave</address>
+    </books>
+</catalogue>
