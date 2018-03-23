@@ -21,7 +21,10 @@ public class AppUtil {
      * @throws IllegalArgumentException if {@code condition} is false.
      */
     public static void checkArgument(Boolean condition) {
+
         if (!condition) {
+
+
             throw new IllegalArgumentException();
         }
     }

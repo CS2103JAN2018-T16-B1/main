@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Book with missing title field -->
+<book>
+    <isbn>9482424</isbn>
+    <author>Muster Hans</author>
+    <avail>Borrowed</avail>
+    <tagged>friends</tagged>
+</book>

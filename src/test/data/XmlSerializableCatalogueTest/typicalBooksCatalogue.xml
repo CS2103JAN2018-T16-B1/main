@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Catalogue save file which contains the same Book values as in
+{@code TypicalBooks#getTypicalCatalogue()}-->
+<catalogue>
+    <books>
+        <title>Alice Pauline</title>
+        <author>Pauline Alice</author>
+        <isbn>85355255</isbn>
+        <avail>Available</avail>
+        <tagged>friends</tagged>
+    </books>
+    <books>
+        <title>Benson Meier</title>
+        <author>Meier Benson</author>
+        <isbn>98765432</isbn>
+        <avail>Available</avail>
+        <tagged>owesMoney</tagged>
+        <tagged>friends</tagged>
+    </books>
+    <books>
+        <title>Carl Kurz</title>
+        <author>Kurz Carl</author>
+        <isbn>95352563</isbn>
+        <avail>Available</avail>
+    </books>
+    <books>
+        <title>Daniel Meier</title>
+        <author>Meier Daniel</author>
+        <isbn>87652533</isbn>
+        <avail>Available</avail>
+    </books>
+    <books>
+        <title>Elle Meyer</title>
+        <author>Meyer Elle</author>
+        <isbn>9482224</isbn>
+        <avail>Available</avail>
+    </books>
+    <books>
+        <title>Fiona Kunz</title>
+        <author>Kunz Fiona</author>
+        <isbn>9482427</isbn>
+        <avail>Available</avail>
+    </books>
+    <books>
+        <title>George Best</title>
+        <author>Best George</author>
+        <isbn>9482442</isbn>
+        <avail>Available</avail>
+    </books>
+    <tags>friends</tags>
+    <tags>owesMoney</tags>
+</catalogue>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalogue>
+    <books>
+        <title>Hans Muster</title>
+        <author isPrivate="false">Muster Hans</author>
+        <isbn isPrivate="false">9482424</isbn>
+        <avail isPrivate="false">Available</avail>
+    </books>
+    <books>
+        <title>Ruth Mueller</title>
+        <author isPrivate="false">Mueller Ruth</author>
+        <isbn isPrivate="false">87249245</isbn>
+        <avail isPrivate="false">Available</avail>
+    </books>
+    <books>
+        <title>Heinz Kurz</title>
+        <author isPrivate="false">Kurz Heinz</author>
+        <isbn isPrivate="false">95352563</isbn>
+        <avail isPrivate="false">Borrowed</avail>
+    </books>
+    <books>
+        <title>Cornelia Meier</title>
+        <author isPrivate="false">Meier Cornerlia</author>
+        <isbn isPrivate="false">87652533</isbn>
+        <avail isPrivate="false">Borrowed</avail>
+    </books>
+    <books>
+        <title>Werner Meyer</title>
+        <author isPrivate="false">Meyer Werner</author>
+        <isbn isPrivate="false">9482224</isbn>
+        <avail isPrivate="false">Reserved</avail>
+    </books>
+    <books>
+        <title>Lydia Kunz</title>
+        <author isPrivate="false">Kunz Lydia</author>
+        <isbn isPrivate="false">9482427</isbn>
+        <avail isPrivate="false">Reserved</avail>
+
+    </books>
+    <books>
+        <title>Anna Best</title>
+        <author isPrivate="false">Best Anna</author>
+        <isbn isPrivate="false">9482442</isbn>
+        <avail isPrivate="false">Reserved</avail>
+    </books>
+    <books>
+        <title>Stefan Meier</title>
+        <author isPrivate="false">Stefan Meier</author>
+        <isbn isPrivate="false">8482424</isbn>
+        <avail isPrivate="false">Borrowed and Reserved</avail>
+    </books>
+    <books>
+        <title>Martin Mueller</title>
+        <author isPrivate="false">chicago ave</author>
+        <isbn isPrivate="false">8482131</isbn>
+        <avail isPrivate="false">Borrowed and Reserved</avail>
+    </books>
+</catalogue>

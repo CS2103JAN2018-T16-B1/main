@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalogue>
+    <!-- Book with invalid avail field -->
+    <books>
+        <title>Hans Muster</title>
+        <author isPrivate="false">Muster Hans</author>
+        <isbn isPrivate="false">9482424</isbn>
+        <avail isPrivate="false">not sure</avail>
+    </books>
+</catalogue>

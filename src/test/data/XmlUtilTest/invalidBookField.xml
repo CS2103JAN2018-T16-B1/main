@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Book with an invalid isbn field -->
+<book>
+    <title>Hans Muster</title>
+    <author>Muster Hans</author>
+    <isbn>9482asf424</isbn>
+    <avail>Borrowed</avail>
+    <tagged>friends</tagged>
+</book>
