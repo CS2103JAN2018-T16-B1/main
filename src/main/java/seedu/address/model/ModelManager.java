@@ -84,6 +84,12 @@ public class ModelManager extends ComponentManager implements Model {
         indicateCatalogueChanged();
     }
 
+    @Override
+    public void borrowBook(Book book) throws BookNotFoundException {
+        catalogue.borrowBook(book);
+        indicateCatalogueChanged();
+    }
+
     //=========== Filtered Book List Accessors =============================================================
 
     /**

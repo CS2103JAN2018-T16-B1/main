@@ -2,6 +2,8 @@ package seedu.address.model.book;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
+import static seedu.address.model.book.Avail.AVAILABLE;
+import static seedu.address.model.book.Avail.BORROWED;
 
 import java.util.Iterator;
 import java.util.List;
@@ -79,6 +81,22 @@ public class UniqueBookList implements Iterable<Book> {
             throw new BookNotFoundException();
         }
         return bookFoundAndDeleted;
+    }
+
+    public boolean borrow(Book toBorrow) throws BookNotFoundException {
+        requireNonNull(toBorrow);
+        final String bookStatus = toBorrow.getAvail().toString();
+
+        switch (bookStatus) {
+            case (AVAILABLE):
+                toBorrow.getAvail().changeStatus(BORROWED);
+                System.out.println("case available\n");
+                return true;
+
+            default:
+                System.out.println("case default\n");
+                throw new BookNotFoundException();
+        }
     }
 
     public void setBooks(UniqueBookList replacement) {
