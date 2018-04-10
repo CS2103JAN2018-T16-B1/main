@@ -6,6 +6,9 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.book.Book;
+import java.util.Random;
+import seedu.address.model.tag.Tag;
+import javafx.scene.paint.Color;
 
 /**
  * An UI component that displays information of a {@code Book}.
@@ -39,6 +42,7 @@ public class BookCard extends UiPart<Region> {
     @FXML
     private FlowPane tags;
 
+
     public BookCard(Book book, int displayedIndex) {
         super(FXML);
         this.book = book;
@@ -47,7 +51,7 @@ public class BookCard extends UiPart<Region> {
         author.setText(book.getAuthor().value);
         isbn.setText(book.getIsbn().value);
         avail.setText(book.getAvail().value);
-        book.getTags().forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+        colorTags(book);
     }
 
     @Override
@@ -65,6 +69,43 @@ public class BookCard extends UiPart<Region> {
         // state check
         BookCard card = (BookCard) other;
         return id.getText().equals(card.id.getText())
-            && book.equals(card.book);
+                && book.equals(card.book);
+    }
+
+    private String getTagColor() {
+        Random rand = new Random();
+        int sCase = rand.nextInt(10);
+        switch (sCase) {
+            case 0:
+                return "-fx-background-color: blue;";
+            case 1:
+                return "-fx-background-color: green;";
+            case 2:
+                return "-fx-background-color: red;";
+            case 3:
+                return "-fx-background-color: yellow;";
+            case 4:
+                return "-fx-background-color: orange;";
+            case 5:
+                return "-fx-background-color: violet;";
+            case 6:
+                return "-fx-background-color: brown;";
+            case 7:
+                return "-fx-background-color: beige;";
+            case 8:
+                return "-fx-background-color: cyan;";
+            case 9:
+                return "-fx-background-color: ivory;";
+            default:
+                return "-fx-background-color: black;";
+        }
+    }
+
+    private void colorTags(Book book) {
+        book.getTags().forEach(tag -> {
+            Label tagLabel = new Label(tag.tagName);
+            tags.getChildren().add(tagLabel);
+            tagLabel.setStyle(getTagColor());
+        });
     }
 }
