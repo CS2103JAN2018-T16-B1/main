@@ -1,8 +1,9 @@
+//@@author khiayi
 package seedu.address.model.book;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
-//@@author khiayi
+
 /**
  * Represents a Book's availability in the catalogue.
  * Guarantees: immutable; is valid as declared in {@link #isValidAvail(String)}

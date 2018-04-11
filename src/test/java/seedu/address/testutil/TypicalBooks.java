@@ -1,3 +1,4 @@
+//@@author khiayi
 package seedu.address.testutil;
 
 import static seedu.address.logic.commands.CommandTestUtil.VALID_AUTHOR_XVI;
@@ -23,7 +24,6 @@ import seedu.address.model.book.exceptions.DuplicateBookException;
  * A utility class containing a list of {@code Book} objects to be used in tests.
  */
 public class TypicalBooks {
-    //@@author khiayi
     public static final Book ANIMAL = new BookBuilder().withTitle("Animal Farm")
         .withAuthor("George Orwell")
         .withAvail("Available")
@@ -81,7 +81,7 @@ public class TypicalBooks {
 
     public static final String KEYWORD_MATCHING_GIRL = "Girl"; // A keyword that matches GIRL
     public static final String KEYWORD_MATCHING_BREAKING = "Breaking"; // A keyword that matches BREAKING
-    //@@author
+
     private TypicalBooks() {
     } // prevents instantiation
 

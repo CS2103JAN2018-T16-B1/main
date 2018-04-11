@@ -1,3 +1,4 @@
+//@@author khiayi
 package seedu.address.model.book;
 
 import static java.util.Objects.requireNonNull;
@@ -9,7 +10,6 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  * Guarantees: immutable; is valid as declared in {@link #isValidAuthor(String)}
  */
 public class Author {
-    //@@author khiayi
     public static final String MESSAGE_AUTHOR_CONSTRAINTS =
         "Book author should only contain alphanumeric characters and spaces, and it should not be blank";
 
@@ -33,7 +33,7 @@ public class Author {
         checkArgument(isValidAuthor(author), MESSAGE_AUTHOR_CONSTRAINTS);
         this.value = author;
     }
-    //@@author
+
     /**
      * Returns true if a given string is a valid book author.
      */

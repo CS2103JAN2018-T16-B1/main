@@ -1,3 +1,4 @@
+//@@author khiayi
 package seedu.address.model.book;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
