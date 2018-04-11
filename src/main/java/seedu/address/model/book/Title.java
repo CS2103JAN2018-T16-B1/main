@@ -1,3 +1,4 @@
+//@@author khiayi
 package seedu.address.model.book;
 
 import static java.util.Objects.requireNonNull;
@@ -8,7 +9,6 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  * Guarantees: immutable; is valid as declared in {@link #isValidTitle(String)}
  */
 public class Title {
-    //@@author khiayi
     public static final String MESSAGE_TITLE_CONSTRAINTS =
         "Book titles should only contain alphanumeric characters and spaces, and it should not be blank";
 
@@ -31,7 +31,6 @@ public class Title {
         this.fullTitle = title;
     }
 
-    //@@author
     /**
      * Returns true if a given string is a valid book name.
      */
