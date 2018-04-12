@@ -25,6 +25,7 @@ import seedu.address.model.account.Account;
 import seedu.address.model.account.Credential;
 import seedu.address.model.account.PrivilegeLevel;
 import seedu.address.model.book.Book;
+import seedu.address.model.book.exceptions.BookNotFoundException;
 import seedu.address.model.book.exceptions.DuplicateBookException;
 import seedu.address.testutil.BookBuilder;
 
@@ -45,7 +46,6 @@ public class AddCommandTest {
         Book validBook = new BookBuilder().build();
 
         CommandResult commandResult = getAddCommandForBook(validBook, modelStub).execute();
-
         assertEquals(String.format(AddCommand.MESSAGE_SUCCESS, validBook), commandResult.feedbackToUser);
         assertEquals(Arrays.asList(validBook), modelStub.booksAdded);
     }
@@ -104,6 +104,11 @@ public class AddCommandTest {
         }
 
         @Override
+        public void borrowBook(Book book) throws BookNotFoundException {
+            fail("This method should not be called.");
+        }
+
+        @Override
         public void resetData(ReadOnlyCatalogue newData) {
             fail("This method should not be called.");
         }
@@ -115,7 +120,17 @@ public class AddCommandTest {
         }
 
         @Override
+        public void reserveBook(Book target) {
+            fail("This method should not be called.");
+        }
+
+        @Override
         public void deleteBook(Book target) {
+            fail("This method should not be called.");
+        }
+
+        @Override
+        public void returnBook(Book target) {
             fail("This method should not be called.");
         }
 

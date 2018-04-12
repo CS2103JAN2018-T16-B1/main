@@ -18,7 +18,7 @@ public class Avail {
         + "3. " + RESERVED + "\n"
         + "4. " + BORROWED_AND_RESERVED + "\n";
 
-    public final String value;
+    private String value;
 
     /**
      * Constructs an {@code Avail}.
@@ -39,7 +39,9 @@ public class Avail {
             || test.equals(BORROWED)
             || test.equals(RESERVED) || test.equals(BORROWED_AND_RESERVED);
     }
+
     //@@author
+
     @Override
     public String toString() {
         return value;

@@ -45,11 +45,12 @@ public class LogicManager extends ComponentManager implements Logic {
             Command command = catalogueParser.parseCommand(commandText);
             if (!isPrivileged(command)) {
                 return new CommandResult(Command.MESSAGE_UNPRIVILEGED);
+            } else {
+                command.setData(model, history, undoRedoStack);
+                CommandResult result = command.execute();
+                undoRedoStack.push(command);
+                return result;
             }
-            command.setData(model, history, undoRedoStack);
-            CommandResult result = command.execute();
-            undoRedoStack.push(command);
-            return result;
         } finally {
             history.add(commandText);
         }

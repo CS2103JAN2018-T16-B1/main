@@ -32,7 +32,7 @@ public class GuiTestAssert {
     public static void assertCardDisplaysBook(Book expectedBook, BookCardHandle actualCard) {
         assertEquals(expectedBook.getTitle().fullTitle, actualCard.getTitle());
         assertEquals(expectedBook.getIsbn().value, actualCard.getIsbn());
-        assertEquals(expectedBook.getAvail().value, actualCard.getAvail());
+        assertEquals(expectedBook.getAvail().getValue(), actualCard.getAvail());
         assertEquals(expectedBook.getAuthor().value, actualCard.getAuthor());
         assertEquals(expectedBook.getTags().stream().map(tag -> tag.tagName).collect(Collectors.toList()),
             actualCard.getTags());

@@ -60,7 +60,6 @@ public class AddCommand extends UndoableCommand {
         } catch (DuplicateBookException e) {
             throw new CommandException(MESSAGE_DUPLICATE_BOOK);
         }
-
     }
 
     @Override

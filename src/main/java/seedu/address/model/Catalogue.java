@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 import javafx.collections.ObservableList;
 import seedu.address.model.book.Book;
+import seedu.address.model.book.BookAlreadyAvailableException;
 import seedu.address.model.book.UniqueBookList;
 import seedu.address.model.book.exceptions.BookNotFoundException;
 import seedu.address.model.book.exceptions.DuplicateBookException;
@@ -147,6 +148,55 @@ public class Catalogue implements ReadOnlyCatalogue {
         }
     }
 
+    /**
+     * alter {@code key} book status from {@code Catalogue}
+     *
+     * @throws BookNotFoundException
+     */
+
+    public void returnBook(Book target, Book returnedBook)
+            throws BookNotFoundException {
+        requireNonNull(returnedBook);
+
+        Book syncedEditedBook = syncWithMasterTagList(returnedBook);
+        // TODO: the tags master list will be updated even though the below line fails.
+        // This can cause the tags master list to have additional tags that are not tagged to any book
+        // in the book list.
+        books.replaceReturnedBook(target, syncedEditedBook);
+    }
+
+    /**
+     * Borrows {@code key} from this {@code Catalogue}.
+     *
+     * @throws BookNotFoundException if the {@code key} is not in this {@code Catalogue}.
+     */
+    public void borrowBook(Book target, Book borrowedBook)
+            throws BookNotFoundException {
+        requireNonNull(borrowedBook);
+
+        Book syncedEditedBook = syncWithMasterTagList(borrowedBook);
+        // TODO: the tags master list will be updated even though the below line fails.
+        // This can cause the tags master list to have additional tags that are not tagged to any book
+        // in the book list.
+        books.replaceBorrowedBook(target, syncedEditedBook);
+    }
+
+    /**
+     * Borrows a book and returns a boolean indicating the result
+     * @param target, reservedBook
+     * @return
+     * @throws BookNotFoundException
+     */
+    public void reserveBook(Book target, Book reservedBook)
+            throws BookNotFoundException {
+        requireNonNull(reservedBook);
+
+        Book syncedEditedBook = syncWithMasterTagList(reservedBook);
+        // TODO: the tags master list will be updated even though the below line fails.
+        // This can cause the tags master list to have additional tags that are not tagged to any book
+        // in the book list.
+        books.replaceReservedBook(target, syncedEditedBook);
+    }
     //// tag-level operations
 
     public void addTag(Tag t) throws UniqueTagList.DuplicateTagException {

@@ -16,6 +16,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import seedu.address.logic.commands.AddCommand;
+import seedu.address.logic.commands.BorrowCommand;
 import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.DeleteCommand;
 import seedu.address.logic.commands.EditCommand;
@@ -26,6 +27,7 @@ import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.HistoryCommand;
 import seedu.address.logic.commands.ListCommand;
 import seedu.address.logic.commands.RedoCommand;
+import seedu.address.logic.commands.ReturnCommand;
 import seedu.address.logic.commands.SelectCommand;
 import seedu.address.logic.commands.UndoCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -39,6 +41,7 @@ import seedu.address.testutil.EditBookDescriptorBuilder;
 public class CatalogueParserTest {
     @Rule
     public ExpectedException thrown = ExpectedException.none();
+
 
 
     private final CatalogueParser parser = new CatalogueParser();
@@ -60,6 +63,20 @@ public class CatalogueParserTest {
         DeleteCommand command = (DeleteCommand) parser.parseCommand(
             DeleteCommand.COMMAND_WORD + " " + INDEX_FIRST_BOOK.getOneBased());
         assertEquals(new DeleteCommand(INDEX_FIRST_BOOK), command);
+    }
+
+    @Test
+    public void parseCommand_return() throws Exception {
+        ReturnCommand command = (ReturnCommand) parser.parseCommand(
+            ReturnCommand.COMMAND_WORD + " " + INDEX_FIRST_BOOK.getOneBased());
+        assertEquals(new ReturnCommand(INDEX_FIRST_BOOK), command);
+    }
+
+    @Test
+    public void parseCommand_borrow() throws Exception {
+        BorrowCommand command = (BorrowCommand) parser.parseCommand
+            (BorrowCommand.COMMAND_WORD + " " + INDEX_FIRST_BOOK.getOneBased());
+        assertEquals(new BorrowCommand(INDEX_FIRST_BOOK), command);
     }
 
     @Test

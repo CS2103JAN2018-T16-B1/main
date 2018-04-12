@@ -137,7 +137,7 @@ public class FindCommandSystemTest extends CatalogueSystemTest {
         assertSelectedCardUnchanged();
 
         /* Case: find availability of book in catalogue -> 0 books found */
-        command = FindCommand.COMMAND_WORD + " " + DELIRIUM.getAvail().value;
+        command = FindCommand.COMMAND_WORD + " " + DELIRIUM.getAvail().getValue();
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
 

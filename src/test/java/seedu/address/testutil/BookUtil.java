@@ -28,7 +28,7 @@ public class BookUtil {
         StringBuilder sb = new StringBuilder();
         sb.append(PREFIX_TITLE + book.getTitle().fullTitle + " ");
         sb.append(PREFIX_ISBN + book.getIsbn().value + " ");
-        sb.append(PREFIX_AVAIL + book.getAvail().value + " ");
+        sb.append(PREFIX_AVAIL + book.getAvail().getValue() + " ");
         sb.append(PREFIX_AUTHOR + book.getAuthor().value + " ");
         book.getTags().stream().forEach(
             s -> sb.append(PREFIX_TAG + s.tagName + " ")

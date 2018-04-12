@@ -64,7 +64,7 @@ public class XmlAdaptedBook {
         title = source.getTitle().fullTitle;
         author = source.getAuthor().value;
         isbn = source.getIsbn().value;
-        avail = source.getAvail().value;
+        avail = source.getAvail().getValue();
         tagged = new ArrayList<>();
         for (Tag tag : source.getTags()) {
             tagged.add(new XmlAdaptedTag(tag));

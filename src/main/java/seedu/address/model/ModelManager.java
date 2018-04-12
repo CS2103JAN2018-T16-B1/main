@@ -20,6 +20,7 @@ import seedu.address.model.account.UniqueAccountList;
 import seedu.address.model.account.exceptions.AccountNotFoundException;
 import seedu.address.model.account.exceptions.DuplicateAccountException;
 import seedu.address.model.book.Book;
+import seedu.address.model.book.BookAlreadyAvailableException;
 import seedu.address.model.book.exceptions.BookNotFoundException;
 import seedu.address.model.book.exceptions.DuplicateBookException;
 
@@ -172,11 +173,31 @@ public class ModelManager extends ComponentManager implements Model {
     }
 
     @Override
+    public void returnBook(Book target, Book returnedBook) throws BookNotFoundException {
+        catalogue.returnBook(target, returnedBook);
+        indicateCatalogueChanged();
+    }
+
+    @Override
     public void updateBook(Book target, Book editedBook)
         throws DuplicateBookException, BookNotFoundException {
         requireAllNonNull(target, editedBook);
 
         catalogue.updateBook(target, editedBook);
+        indicateCatalogueChanged();
+    }
+
+    @Override
+    public void borrowBook(Book target, Book borrowedBook) throws BookNotFoundException {
+        catalogue.borrowBook(target, borrowedBook);
+        requireAllNonNull(target, borrowedBook);
+        indicateCatalogueChanged();
+    }
+
+    @Override
+    public void reserveBook(Book target, Book reservedBook) throws BookNotFoundException {
+        catalogue.reserveBook(target,reservedBook);
+        requireAllNonNull(target, reservedBook);
         indicateCatalogueChanged();
     }
 
@@ -237,5 +258,4 @@ public class ModelManager extends ComponentManager implements Model {
         return catalogue.equals(other.catalogue)
             && filteredBooks.equals(other.filteredBooks);
     }
-
 }

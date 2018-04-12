@@ -24,12 +24,15 @@ You can login the default account with this command: 'login admin admin'
 
 == Introduction
 
-Catalogue is for *NUS students* who prefer to use a desktop app for finding, borrowing and returning english books at the Central Library
-Catalogue is for *NUS librarian* who prefer to use a desktop app for managing books, students accounts and loans at the Central Library.
-More importantly, Catalogue is *optimized for those who prefer to work with a Command Line Interface* (CLI) while still having the benefits of a Graphical User Interface (GUI).
-If you can type fast, Catalogue can get your contact management tasks done faster than traditional GUI apps.
-This guide will help you and give you an overview of the different features of Catalogue.
-Interested? Jump to the <<Quick Start>> to get started. Enjoy!
+Catalogue is for *NUS students* who prefer to use a desktop app for finding, borrowing and returning english books at
+the Central Library +
+Catalogue is for *NUS librarian* who prefer to use a desktop app for managing books, students accounts and loans at
+the Central Library. +
+More importantly, Catalogue is *optimized for those who prefer to work with a Command Line Interface* (CLI) while still
+ having the benefits of a Graphical User Interface (GUI). +
+If you can type fast, Catalogue can get your contact management tasks done faster than traditional GUI apps. +
+This guide will help you and give you an overview of the different features of Catalogue. +
+Interested? Jump to the <<Quick Start>> to get started. Enjoy! +
 
 == Quick Start
 
@@ -45,17 +48,18 @@ This app will not work with earlier versions of Java 8.
 +
 image::UI_final.png[width="790"]
 +
-1 - Command box: type the commands in this section
-2 - Result Display: Show the result of what you typed above
-3 - Book List: List of all the books in the Central Library
-4 – Information Section: when you click on a book, the webpage on goodreads will open and display additional information
+1 - Command box: type the commands in this section +
+2 - Result Display: Show the result of what you typed above +
+3 - Book List: List of all the books in the Central Library +
+4 – Information Section: when you click on a book, the webpage on goodreads will open and display additional
+information +
 
 .  Type the command in the command box and press kbd:[Enter] to execute it. +
 e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 .  Some example commands you can try:
 
 * *`list`* : lists all books
-* **`add`**`n/Animal Farm a/George Orwell p/9780736692427 e/Borrowed and Reserved ` : adds a book titled `Animal Farm` to the Catalogue.
+* **`add`**`t/Animal Farm a/George Orwell i/9780736692427 av/Borrowed and Reserved ` : adds a book titled `Animal Farm` to the Catalogue.
 * **`delete`**`3` : deletes the 3rd book shown in the current list
 * *`exit`* : exits the app
 
@@ -67,10 +71,10 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 ====
 *Command Format*
 
-* Words in `UPPER_CASE` are the parameters to be supplied by the user e.g. in `add n/TITLE`, `TITLE` is a parameter which can be used as `add n/Animal Farm`.
-* Items in square brackets are optional e.g `n/TITLE [t/TAG]` can be used as `n/Animal Farm t/satire` or as `n/Animal Farm`.
-* Items with `…`​ after them can be used multiple times including zero times e.g. `[t/TAG]...` can be used as `{nbsp}` (i.e. 0 times), `t/satire`, `t/satire t/political` etc.
-* Parameters can be in any order e.g. if the command specifies `n/TITLE p/ISBN`, `p/ISBN n/TITLE` is also acceptable.
+* Words in `UPPER_CASE` are the parameters to be supplied by the user e.g. in `add t/TITLE`, `TITLE` is a parameter which can be used as `add n/Animal Farm`.
+* Items in square brackets are optional e.g `t/TITLE [tag/TAG]` can be used as `t/Animal Farm tag/satire` or as `t/Animal Farm`.
+* Items with `…`​ after them can be used multiple times including zero times e.g. `[tag/TAG]...` can be used as `{nbsp}` (i.e. 0 times), `tag/satire`, `tag/satire tag/political` etc.
+* Parameters can be in any order e.g. if the command specifies `t/TITLE i/ISBN`, `i/ISBN t/TITLE` is also acceptable.
 ====
 
 === Login as Student/Librarian : `Login`
@@ -78,13 +82,13 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 Format: `login [username] [password]` +
 Privilege Level: 0(Guest)
 
-Default account:
-Username: admin
+Default account: +
+Username: admin +
 Password: admin
 
 Login with different accounts:
-1 - Add account using adda command (see how to link adda to addAccount)
-2 – Use the username and password that you entered for the above account
+1 - Add account using adda command +
+2 – Use the username and password that you entered for the above account +
 e.g. adda n/Victor Tardieu m/ A1234567N u/e12345 p/secretpassword l/1
 
 [NOTE]
@@ -92,10 +96,10 @@ Different accounts might have different privilege levels. A command can only be 
 
 === Logout from Student/Librarian : `Logout`
 
-Format: `logout`
-Privilege Level:
-From 2(Librarian) you are going back to 0(Guest)
-From 1(Student) you are going back to 0(Guest)
+Format: `logout` +
+Privilege Level: +
+From 2(Librarian) you are going back to 0(Guest) +
+From 1(Student) you are going back to 0(Guest) +
 
 [NOTE]
 Remember that when one logs out from your account, some commands (such as add a book for a librarian) won’t be available anymore. To be able to do them again, one will have to login again with his unique credentials.
@@ -118,8 +122,15 @@ A book can have any number of tags (including 0)
 
 Examples:
 
-* `add n/Animal Farm a/George Orwell p/9780736692427 e/Borrowed and Reserved`
-* `add n/Breaking Dawn t/fiction e/Borrowed and Reserved a/Stephenie Meyer p/9780316067928 t/young adults`
+* `add t/Animal Farm a/George Orwell i/9780736692427 av/Borrowed and Reserved`
+* `add t/Breaking Dawn tag/fiction av/Borrowed and Reserved a/Stephenie Meyer i/9780316067928 tag/young adults`
+
+[TIP]
+Press TAB after writing `add` to use the auto-complete function.
+
+Examples:
+
+* `add` --> (press TAB) --> `add t/ a/ i/ av/ tag/ `
 
 === Listing all books : `list`
 
@@ -132,7 +143,7 @@ Privilege Level: 0(Guest)
 === Editing a book : `edit`
 
 Edits an existing book in the catalogue. +
-Format: `edit INDEX [n/TITLE] [a/AUTHOR] [p/ISBN] [e/AVAIL] [t/TAG]...` +
+Format: `edit INDEX t/TITLE a/AUTHOR i/ISBN av/AVAIL tag/TAG...` +
 Privilege Level: 2(Librarian)
 
 ****
@@ -149,6 +160,13 @@ Examples:
 Edits the isbn number and availability author of the 1st book to be `9780736692426` and `Available` respectively.
 * `edit 2 n/Breaking Dawn t/` +
 Edits the title of the 2nd book to be `Breaking Dawn` and clears all existing tags.
+
+TIP]
+Press TAB after writing `edit` to use the auto-complete function.
+
+Examples:
+
+* `edit` --> (press TAB) --> `edit 1 t/ a/ i/ av/ tag/ `
 
 === Locating books by title: `find`
 
@@ -194,6 +212,13 @@ Deletes the 2nd book in the catalogue.
 `delete 1` +
 Deletes the 1st book in the results of the `find` command.
 
+TIP]
+Press TAB after writing `delete` to use the auto-complete function.
+
+Examples:
+
+* `delete` --> (press TAB) --> `delete 1`
+
 === Selecting a book : `select`
 
 Selects the book identified by the index number used in the last book listing. +
@@ -214,6 +239,13 @@ Selects the 2nd book in the catalogue.
 * `find Breaking` +
 `select 1` +
 Selects the 1st book in the results of the `find` command.
+
+TIP]
+Press TAB after writing `select` to use the auto-complete function.
+
+Examples:
+
+* `select` --> (press TAB) --> `select t/ a/ i/ av/ tag/
 
 === Listing entered commands : `history`
 
@@ -289,7 +321,7 @@ Privilege Level: 2(Librarian)
 
 Borrow the specified book from the catalogue. +
 Format: `borrow INDEX` +
-Privilege Level: 2(Librarian)
+Privilege Level: 1(Student)
 
 ****
 * Borrow the book at the specified `INDEX`.
@@ -313,13 +345,67 @@ Privilege Level: 2(Librarian)
 
 Return a specified book to the catalogue +
 Format: `return INDEX` +
-Privilege Level: 2(Librarian)
+Privilege Level: 1(Student)
+
+[NOTE]
+Can only return book that has been borrowed
 
 ****
 * Return the book at the specified `INDEX`.
 * The index refers to the index number shown in the most recent listing.
 * The index *must be a positive integer* 1, 2, 3, ...
 ****
+
+=== Renew a book : `renew` [TO BE IMPLEMENTED]
+
+Renew a specific book from the Catalogue +
+Format: `renew INDEX` +
+Privilege Level: 1(Student)
+
+[NOTE]
+Can only renew book that has been borrowed
+
+****
+* Renew the book at the specified `INDEX`.
+* The index refers to the index number shown in the most recent listing.
+* The index *must be a positive integer* 1, 2, 3, ...
+****
+
+=== Add an account : `addAccount` [TO BE IMPLEMENTED]
+
+Add a given account to the list of accounts +
+Format: `addAccount n/NAME m/MATRICNUMBER u/USERNAME p/PASSWORD l/PRIVILEGE LEVEL` +
+Privilege Level: 2(Librarian)
+
+Examples:
+
+* `addAccount n/Jack Morgan m/A0123456J u/jack p/jack123 l/1`
+* `addAccount n/Tom Madison m/A1234567T u/tom p/tom123 l/2`
+
+[TIP]
+Press TAB after writing `addAccount` to use the auto-complete function.
+
+Examples:
+
+* `addAccount` --> (press TAB) --> `addAccount n/ m/ u/ p/ l/ `
+
+=== Deleting an account : `deletea` [TO BE IMPLEMENTED]
+
+Deletes the specified account from the list of accounts. +
+Format: `delete USERNAME` +
+Privilege Level: 2(Librarian)
+
+****
+* Deletes the account with the specified `USERNAME`.
+* The USERNAME *must be a from a created account in the list of accounts*
+****
+
+Examples:
+
+* `delete A1234567J` +
+Deletes account linked to A1234567J --> (Jack Morgan).
+* `delete A0123456M` +
+Deletes the account linked to A0123456M.
 
 === Exiting the program : `exit`
 
@@ -345,7 +431,7 @@ _{explain how the user can enable/disable data encryption}_
 
 == Command Summary
 
-* *Add* `add n/TITLE a/AUTHOR p/ISBN e/AVAIL [t/TAG]...` +
+* *Add* `add t/TITLE a/AUTHOR i/ISBN av/AVAIL [tag/TAG]...` +
 e.g. `add n/Animal Farm a/George Orwell p/9780736692427 e/Borrowed and Reserved t/political t/satire`
 * *Clear* : `clear`
 * *Delete* : `delete INDEX` +
@@ -364,4 +450,12 @@ e.g.`select 2`
 * *Borrow* : `borrow INDEX` +
 e.g. `borrow 1`
 * *Return* : `return INDEX` +
-e.g. `delete 2`
+e.g. `return 2`
+* *reserve* : `reserve INDEX` +
+e.g. `reserve 2`
+* *addaAccount* : `adda n/NAME m/MATRICNUMBER u/USERNAME p/PASSWORD l/PRIVILEGE LEVEL` +
+e.g. `addAccount n/Jack Morgan m/A0123456J u/jack p/jack123 l/1`
+* *deletea* : `delete USERNAME` +
+e.g. `delete A0123456M`
+* *cleara* : `cleara`
+

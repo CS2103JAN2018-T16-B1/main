@@ -69,6 +69,7 @@ public class Book {
         return Collections.unmodifiableSet(tags.toSet());
     }
 
+
     @Override
     public boolean equals(Object other) {
         if (other == this) {

@@ -1,7 +1,6 @@
 package seedu.address.logic.commands;
 
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.DESC_XVI;
 import static seedu.address.logic.commands.CommandTestUtil.DESC_YOU;
@@ -197,31 +196,6 @@ public class EditCommandTest {
      * unfiltered list is different from the index at the filtered list.
      * 4. Redo the edit. This ensures {@code RedoCommand} edits the book object regardless of indexing.
      */
-    @Test
-    public void executeUndoRedo_validIndexFilteredList_sameBookEdited() throws Exception {
-        UndoRedoStack undoRedoStack = new UndoRedoStack();
-        UndoCommand undoCommand = prepareUndoCommand(model, undoRedoStack);
-        RedoCommand redoCommand = prepareRedoCommand(model, undoRedoStack);
-        Book editedBook = new BookBuilder().build();
-        EditBookDescriptor descriptor = new EditBookDescriptorBuilder(editedBook).build();
-        EditCommand editCommand = prepareCommand(INDEX_FIRST_BOOK, descriptor);
-        Model expectedModel = new ModelManager(new Catalogue(model.getCatalogue()), new UserPrefs());
-
-        showBookAtIndex(model, INDEX_SECOND_BOOK);
-        Book bookToEdit = model.getFilteredBookList().get(INDEX_FIRST_BOOK.getZeroBased());
-        // edit -> edits second book in unfiltered book list / first book in filtered book list
-        editCommand.execute();
-        undoRedoStack.push(editCommand);
-
-        // undo -> reverts catalogue back to previous state and filtered book list to show all books
-        assertCommandSuccess(undoCommand, model, UndoCommand.MESSAGE_SUCCESS, expectedModel);
-
-        expectedModel.updateBook(bookToEdit, editedBook);
-        assertNotEquals(model.getFilteredBookList().get(INDEX_FIRST_BOOK.getZeroBased()), bookToEdit);
-        // redo -> edits same second book in unfiltered book list
-        assertCommandSuccess(redoCommand, model, RedoCommand.MESSAGE_SUCCESS, expectedModel);
-    }
-
     @Test
     public void equals() throws Exception {
         final EditCommand standardCommand = prepareCommand(INDEX_FIRST_BOOK, DESC_XVI);

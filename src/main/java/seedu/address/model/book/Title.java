@@ -30,6 +30,7 @@ public class Title {
         checkArgument(isValidTitle(title), MESSAGE_TITLE_CONSTRAINTS);
         this.fullTitle = title;
     }
+
     //@@author
     /**
      * Returns true if a given string is a valid book name.
@@ -45,14 +46,12 @@ public class Title {
 
     @Override
     public boolean equals(Object other) {
-        return other == this // short circuit if same object
-            || (other instanceof Title // instanceof handles nulls
-            && this.fullTitle.equals(((Title) other).fullTitle)); // state check
+        return other == this // short circuit if same object            || (other instanceof Title // instanceof handles nulls
+            && this.fullTitle.equals(((Title) other).fullTitle); // state check
     }
 
     @Override
     public int hashCode() {
         return fullTitle.hashCode();
     }
-
 }
