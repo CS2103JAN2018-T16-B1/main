@@ -12,10 +12,10 @@ public class CliSyntax {
     public static final Prefix PREFIX_AVAIL = new Prefix("av/");
     public static final Prefix PREFIX_TAG = new Prefix("tag/");
 
-    public static final Prefix PREFIX_NAME = new Prefix("name/");
-    public static final Prefix PREFIX_USERNAME = new Prefix("user/");
-    public static final Prefix PREFIX_MATRICNUMBER = new Prefix("matric/");
-    public static final Prefix PREFIX_PASSWORD = new Prefix("password/");
-    public static final Prefix PREFIX_PRIVILEGE = new Prefix("privilege/");
+    public static final Prefix PREFIX_NAME = new Prefix("n/");
+    public static final Prefix PREFIX_USERNAME = new Prefix("u/");
+    public static final Prefix PREFIX_MATRICNUMBER = new Prefix("m/");
+    public static final Prefix PREFIX_PASSWORD = new Prefix("p/");
+    public static final Prefix PREFIX_PRIVILEGE = new Prefix("l/");
 
 }

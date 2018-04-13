@@ -3,6 +3,7 @@ package seedu.address.logic.parser;
 import seedu.address.logic.commands.AddAccountCommand;
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.commands.BorrowCommand;
+import seedu.address.logic.commands.ClearAccountCommand;
 import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.DeleteCommand;
@@ -107,6 +108,9 @@ public class CatalogueParser {
 
         case ReserveCommand.COMMAND_WORD:
             return new ReserveCommandParser().parse(arguments);
+            
+        case ClearAccountCommand.COMMAND_WORD:
+            return new ClearAccountCommand();
 
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);

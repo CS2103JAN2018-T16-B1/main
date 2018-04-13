@@ -3,6 +3,7 @@ package seedu.address.logic;
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.ComponentManager;
 import seedu.address.commons.core.LogsCenter;
+import seedu.address.logic.commands.AddAccountCommand;
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.CommandResult;
@@ -58,6 +59,9 @@ public class LogicManager extends ComponentManager implements Logic {
             break;
         case SelectCommand.COMMAND_WORD:
             auto = "select 1";
+            break;
+        case AddAccountCommand.COMMAND_WORD:
+            auto = "addAccount n/ m/ u/ p/ l/ ";
             break;
         default:
             auto = myString;

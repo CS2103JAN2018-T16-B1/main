@@ -113,8 +113,7 @@ Privilege Level: 0(Guest)
 === Adding a book: `add`
 
 
-Adds a book to the catalogue +
-Format: `add n/TITLE a/AUTHOR p/ISBN e/AVAIL  [t/TAG]...`
+Format: `add n/TITLE a/AUTHOR i/ISBN av/AVAIL  [t/TAG]...`
 Privilege Level: 2(Librarian)
 
 [TIP]
@@ -156,7 +155,7 @@ Privilege Level: 2(Librarian)
 
 Examples:
 
-* `edit 1 p/9780736692426 e/Borrowed and Reserved` +
+* `edit 1 i/9780736692426 av/Borrowed and Reserved` +
 Edits the isbn number and availability author of the 1st book to be `9780736692426` and `Available` respectively.
 * `edit 2 n/Breaking Dawn t/` +
 Edits the title of the 2nd book to be `Breaking Dawn` and clears all existing tags.
@@ -335,11 +334,14 @@ Examples:
 `borrow 2` +
 Borrow the 2nd book in the catalogue.
 
-=== Clearing all accounts : `cleara`[TO BE IMPLEMENTED]
+=== Clearing all accounts : `cleara`
 
 Clears all accounts from AccountList. +
 Format: `clear` +
 Privilege Level: 2(Librarian)
+
+[NOTE]
+When an librarian clears the list of accounts, it is automatically logged out.
 
 === Return a book : `return`[TO BE IMPLEMENTED]
 
@@ -432,11 +434,11 @@ _{explain how the user can enable/disable data encryption}_
 == Command Summary
 
 * *Add* `add t/TITLE a/AUTHOR i/ISBN av/AVAIL [tag/TAG]...` +
-e.g. `add n/Animal Farm a/George Orwell p/9780736692427 e/Borrowed and Reserved t/political t/satire`
+e.g. `add n/Animal Farm a/George Orwell i/9780736692427 av/Borrowed and Reserved t/political t/satire`
 * *Clear* : `clear`
 * *Delete* : `delete INDEX` +
 e.g. `delete 3`
-* *Edit* : `edit INDEX [n/TITLE] [a/AUTHOR] [p/ISBN] [e/AVAIL] [t/TAG]...` +
+* *Edit* : `edit INDEX [n/TITLE] [a/AUTHOR] [i/ISBN] [av/AVAIL] [t/TAG]...` +
 e.g. `edit 2 n/Animal Farm e/Available`
 * *Find* : `find KEYWORD [MORE_KEYWORDS]` +
 e.g. `find Animal Dawn`
@@ -453,7 +455,7 @@ e.g. `borrow 1`
 e.g. `return 2`
 * *reserve* : `reserve INDEX` +
 e.g. `reserve 2`
-* *addaAccount* : `adda n/NAME m/MATRICNUMBER u/USERNAME p/PASSWORD l/PRIVILEGE LEVEL` +
+* *addaAccount* : `addAccount n/NAME m/MATRICNUMBER u/USERNAME p/PASSWORD l/PRIVILEGE LEVEL` +
 e.g. `addAccount n/Jack Morgan m/A0123456J u/jack p/jack123 l/1`
 * *deletea* : `delete USERNAME` +
 e.g. `delete A0123456M`

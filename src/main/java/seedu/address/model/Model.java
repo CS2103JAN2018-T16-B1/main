@@ -4,6 +4,7 @@ import javafx.collections.ObservableList;
 import seedu.address.model.account.Account;
 import seedu.address.model.account.Credential;
 import seedu.address.model.account.PrivilegeLevel;
+import seedu.address.model.account.UniqueAccountList;
 import seedu.address.model.account.exceptions.AccountNotFoundException;
 import seedu.address.model.account.exceptions.DuplicateAccountException;
 import seedu.address.model.book.Book;
@@ -30,6 +31,11 @@ public interface Model {
      * Clears existing backing model and replaces with the provided new data.
      */
     void resetData(ReadOnlyCatalogue newData);
+
+    /**
+     * Clears existing backing model and replaces with the provided new data.
+     */
+    void resetAccount(UniqueAccountList newData);
 
     /**
      * Returns the Catalogue

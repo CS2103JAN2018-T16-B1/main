@@ -13,11 +13,11 @@
 
 == Summary of contributions
 
-* *Major enhancement*:
-** What it does:
-** Justification:
-** Highlights:
-** Credits:
+* *Major enhancement*: added the ability to add and delete account Commands and the add/delete command parsers
+** What it does: allows the user to add a new account into the existing account list and delete an account based on the username inside the account list.
+** Justification: This feature improves the product significantly because a librarian can create borrowers (with privilege level of student) and create new administrators (with privilege level of librarian). The database of students will allow the students of National University of Singapore to borrow, return and reserve a book of their desire inside the library.
+** Highlights:This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.
+** Credits: NIL
 
 * *Minor enhancement*:
 

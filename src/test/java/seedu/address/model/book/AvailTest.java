@@ -19,6 +19,7 @@ public class AvailTest {
         Assert.assertThrows(IllegalArgumentException.class, () -> new Avail(invalidAvail));
     }
 
+    //@@author khiayi
     @Test
     public void isValidAvail() {
         // null avail

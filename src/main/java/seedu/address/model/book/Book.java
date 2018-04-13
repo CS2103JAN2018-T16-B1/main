@@ -1,3 +1,4 @@
+//@@author khiayi
 package seedu.address.model.book;
 
 import seedu.address.model.tag.Tag;
