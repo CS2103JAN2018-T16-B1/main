@@ -37,7 +37,7 @@ public class LogicManager extends ComponentManager implements Logic {
         catalogueParser = new CatalogueParser();
         undoRedoStack = new UndoRedoStack();
     }
-
+    //@@author victortardieu
     /**
      * @param myString
      * @return auto, the string that holds the autocomplete string of the chosen command
@@ -68,7 +68,7 @@ public class LogicManager extends ComponentManager implements Logic {
         }
         return auto;
     }
-
+    //@@author
     @Override
     public CommandResult execute(String commandText) throws CommandException, ParseException {
         logger.info("----------------[USER COMMAND][" + commandText + "]");

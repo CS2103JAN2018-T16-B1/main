@@ -9,6 +9,7 @@ import seedu.address.model.ModelManager;
 import seedu.address.model.account.Account;
 import seedu.address.model.account.exceptions.DuplicateAccountException;
 
+//@@author victortardieu
 /**
  * A utility class containing a list of {@code Account} objects to be used in tests.
  */

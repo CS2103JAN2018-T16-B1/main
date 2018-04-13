@@ -7,6 +7,7 @@ import seedu.address.model.account.PrivilegeLevel;
 import seedu.address.model.account.UniqueAccountList;
 import seedu.address.model.account.exceptions.DuplicateAccountException;
 
+//@@author victortardieu
 /**
  * Checks if user is a librarian. If yes, it clears the list of accounts and logs out the current account.
  */

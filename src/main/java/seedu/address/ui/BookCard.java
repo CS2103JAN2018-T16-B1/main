@@ -72,6 +72,7 @@ public class BookCard extends UiPart<Region> {
             && book.equals(card.book);
     }
 
+    //@@author victortardieu
     private String getTagColor() {
         Random rand = new Random();
         int sCase = rand.nextInt(10);
