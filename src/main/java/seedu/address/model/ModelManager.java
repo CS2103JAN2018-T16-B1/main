@@ -32,8 +32,8 @@ public class ModelManager extends ComponentManager implements Model {
     private static final Logger logger = LogsCenter.getLogger(ModelManager.class);
 
     private final Catalogue catalogue;
-    private final FilteredList<Book> filteredBooks;
     private UniqueAccountList accountList;
+    private final FilteredList<Book> filteredBooks;
     private Account currentAccount;
 
     /**

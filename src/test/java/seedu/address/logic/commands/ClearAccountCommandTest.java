@@ -24,7 +24,7 @@ public class ClearAccountCommandTest {
         Model model = new ModelManager();
         model = getTypicalAccountList();
         assertCommandSuccess(prepareCommand(model), model, ClearAccountCommand.MESSAGE_SUCCESS,
-            model);
+                model);
     }
 
     private ClearAccountCommand prepareCommand(Model model) throws DuplicateAccountException {

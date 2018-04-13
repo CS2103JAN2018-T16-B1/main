@@ -26,7 +26,6 @@ public class Isbn {
         this.value = isbn;
     }
     //@@author
-
     /**
      * Returns true if a given string is a valid book isbn number.
      */

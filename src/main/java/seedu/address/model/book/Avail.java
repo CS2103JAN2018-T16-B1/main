@@ -21,6 +21,7 @@ public class Avail {
         + "4. " + BORROWED_AND_RESERVED + "\n";
 
 
+
     public final String value;
 
     /**
@@ -46,7 +47,6 @@ public class Avail {
     public String getValue() {
         return value;
     }
-
     //@@author
     @Override
     public String toString() {

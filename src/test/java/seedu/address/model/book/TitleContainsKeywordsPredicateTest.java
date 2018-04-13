@@ -38,7 +38,6 @@ public class TitleContainsKeywordsPredicateTest {
         // different book -> returns false
         assertFalse(firstPredicate.equals(secondPredicate));
     }
-
     //@@author khiayi
     @Test
     public void test_nameContainsKeywords_returnsTrue() {

@@ -49,6 +49,7 @@ import seedu.address.ui.CommandBox;
 public abstract class CatalogueSystemTest {
     @ClassRule
     public static ClockRule clockRule = new ClockRule();
+
     private static final List<String> COMMAND_BOX_DEFAULT_STYLE = Arrays.asList("text-input", "text-field");
     private static final List<String> COMMAND_BOX_ERROR_STYLE =
         Arrays.asList("text-input", "text-field", CommandBox.ERROR_STYLE_CLASS);

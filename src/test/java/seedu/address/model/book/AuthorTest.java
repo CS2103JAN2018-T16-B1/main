@@ -19,7 +19,6 @@ public class AuthorTest {
         String invalidAuthor = "";
         Assert.assertThrows(IllegalArgumentException.class, () -> new Author(invalidAuthor));
     }
-
     //@@author khiayi
     @Test
     public void isValidAuthor() {

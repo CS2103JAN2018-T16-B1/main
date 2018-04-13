@@ -33,7 +33,8 @@ public class Catalogue implements ReadOnlyCatalogue {
      *
      * Note that non-static init blocks are not recommended to use. There are other ways to avoid duplication
      *   among constructors.
-    */ {
+     */
+    {
         books = new UniqueBookList();
         tags = new UniqueTagList();
     }
