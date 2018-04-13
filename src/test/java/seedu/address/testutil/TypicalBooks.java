@@ -1,5 +1,13 @@
 package seedu.address.testutil;
 
+import seedu.address.model.Catalogue;
+import seedu.address.model.book.Book;
+import seedu.address.model.book.exceptions.DuplicateBookException;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static seedu.address.logic.commands.CommandTestUtil.VALID_AUTHOR_XVI;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_AUTHOR_YOU;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_AVAIL_XVI;
@@ -10,14 +18,6 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_DYSTOPIA;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_FICTION;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TITLE_XVI;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TITLE_YOU;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import seedu.address.model.Catalogue;
-import seedu.address.model.book.Book;
-import seedu.address.model.book.exceptions.DuplicateBookException;
 
 /**
  * A utility class containing a list of {@code Book} objects to be used in tests.

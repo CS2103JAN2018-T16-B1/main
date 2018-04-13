@@ -1,19 +1,8 @@
 package seedu.address.commons.util;
 
-import static org.junit.Assert.assertEquals;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Collections;
-import java.util.List;
-
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.annotation.XmlRootElement;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
 import seedu.address.model.Catalogue;
 import seedu.address.storage.XmlAdaptedBook;
 import seedu.address.storage.XmlAdaptedTag;
@@ -21,6 +10,16 @@ import seedu.address.storage.XmlSerializableCatalogue;
 import seedu.address.testutil.BookBuilder;
 import seedu.address.testutil.CatalogueBuilder;
 import seedu.address.testutil.TestUtil;
+
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Collections;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class XmlUtilTest {
 

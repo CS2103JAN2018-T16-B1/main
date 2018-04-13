@@ -1,23 +1,22 @@
 package seedu.address.logic;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-import static seedu.address.logic.UndoRedoStackUtil.prepareStack;
+import org.junit.Test;
+import seedu.address.logic.commands.Command;
+import seedu.address.logic.commands.CommandResult;
+import seedu.address.logic.commands.RedoCommand;
+import seedu.address.logic.commands.UndoCommand;
+import seedu.address.logic.commands.UndoableCommand;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.EmptyStackException;
 import java.util.List;
 
-import org.junit.Test;
-
-import seedu.address.logic.commands.Command;
-import seedu.address.logic.commands.CommandResult;
-import seedu.address.logic.commands.RedoCommand;
-import seedu.address.logic.commands.UndoCommand;
-import seedu.address.logic.commands.UndoableCommand;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import static seedu.address.logic.UndoRedoStackUtil.prepareStack;
 
 public class UndoRedoStackTest {
     private final DummyCommand dummyCommandOne = new DummyCommand();

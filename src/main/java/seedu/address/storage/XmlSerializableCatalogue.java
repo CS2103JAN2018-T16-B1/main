@@ -1,15 +1,15 @@
 package seedu.address.storage;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
+import seedu.address.commons.exceptions.IllegalValueException;
+import seedu.address.model.Catalogue;
+import seedu.address.model.ReadOnlyCatalogue;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import seedu.address.commons.exceptions.IllegalValueException;
-import seedu.address.model.Catalogue;
-import seedu.address.model.ReadOnlyCatalogue;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * An Immutable Catalogue that is serializable to XML format

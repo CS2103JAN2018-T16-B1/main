@@ -1,11 +1,5 @@
 package seedu.address.model;
 
-import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
-
-import java.util.function.Predicate;
-import java.util.logging.Logger;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -22,6 +16,12 @@ import seedu.address.model.account.exceptions.DuplicateAccountException;
 import seedu.address.model.book.Book;
 import seedu.address.model.book.exceptions.BookNotFoundException;
 import seedu.address.model.book.exceptions.DuplicateBookException;
+
+import java.util.function.Predicate;
+import java.util.logging.Logger;
+
+import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 
 /**
@@ -113,6 +113,21 @@ public class ModelManager extends ComponentManager implements Model {
         throws DuplicateAccountException, AccountNotFoundException {
         accountList.setAccount(account, account);
         indicateAccountListChanged();
+    }
+
+    public void returnBook(Book target, Book returnedBook) throws BookNotFoundException {
+        catalogue.returnBook(target, returnedBook);
+        indicateCatalogueChanged();
+    }
+
+    public void borrowBook(Book target, Book borrowedBook) throws BookNotFoundException {
+        catalogue.borrowBook(target, borrowedBook);
+        indicateCatalogueChanged();
+    }
+
+    public void reserveBook(Book target, Book reservedBook) throws BookNotFoundException {
+        catalogue.returnBook(target, reservedBook);
+        indicateCatalogueChanged();
     }
 
     /**

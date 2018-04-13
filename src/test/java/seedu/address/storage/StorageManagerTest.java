@@ -1,23 +1,22 @@
 package seedu.address.storage;
 
-import static junit.framework.TestCase.assertNotNull;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static seedu.address.testutil.TypicalBooks.getTypicalCatalogue;
-
-import java.io.IOException;
-
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-
 import seedu.address.commons.events.model.CatalogueChangedEvent;
 import seedu.address.commons.events.storage.DataSavingExceptionEvent;
 import seedu.address.model.Catalogue;
 import seedu.address.model.ReadOnlyCatalogue;
 import seedu.address.model.UserPrefs;
 import seedu.address.ui.testutil.EventsCollectorRule;
+
+import java.io.IOException;
+
+import static junit.framework.TestCase.assertNotNull;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static seedu.address.testutil.TypicalBooks.getTypicalCatalogue;
 
 public class StorageManagerTest {
 

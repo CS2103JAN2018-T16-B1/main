@@ -1,11 +1,11 @@
 package guitests.guihandles;
 
-import java.util.List;
-import java.util.Optional;
-
 import javafx.scene.control.ListView;
 import seedu.address.model.book.Book;
 import seedu.address.ui.BookCard;
+
+import java.util.List;
+import java.util.Optional;
 
 /**
  * Provides a handle for {@code BookListPanel} containing the list of {@code BookCard}.

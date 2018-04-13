@@ -1,6 +1,10 @@
 package seedu.address.storage;
 
-import static java.util.Objects.requireNonNull;
+import seedu.address.commons.core.LogsCenter;
+import seedu.address.commons.exceptions.DataConversionException;
+import seedu.address.commons.exceptions.IllegalValueException;
+import seedu.address.commons.util.FileUtil;
+import seedu.address.model.ReadOnlyCatalogue;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,11 +12,7 @@ import java.io.IOException;
 import java.util.Optional;
 import java.util.logging.Logger;
 
-import seedu.address.commons.core.LogsCenter;
-import seedu.address.commons.exceptions.DataConversionException;
-import seedu.address.commons.exceptions.IllegalValueException;
-import seedu.address.commons.util.FileUtil;
-import seedu.address.model.ReadOnlyCatalogue;
+import static java.util.Objects.requireNonNull;
 
 /**
  * A class to access Catalogue data stored as an xml file on the hard disk.

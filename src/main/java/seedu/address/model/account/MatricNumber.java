@@ -1,10 +1,10 @@
 //@@author QiuHaohao
 package seedu.address.model.account;
 
+import java.io.Serializable;
+
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
-
-import java.io.Serializable;
 
 /**
  * Represents a set of username and password
@@ -48,7 +48,7 @@ public class MatricNumber implements Serializable {
         return other == this
             || (other instanceof MatricNumber // short circuit if same obj
             && this.getMatricNumber().equals(((MatricNumber) other).getMatricNumber()) //check status
-            );
+        );
     }
 
     @Override

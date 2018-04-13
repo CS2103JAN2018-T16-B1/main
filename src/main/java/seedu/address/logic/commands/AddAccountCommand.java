@@ -1,17 +1,17 @@
 package seedu.address.logic.commands;
 
+import seedu.address.logic.commands.exceptions.CommandException;
+import seedu.address.model.Model;
+import seedu.address.model.account.Account;
+import seedu.address.model.account.PrivilegeLevel;
+import seedu.address.model.account.exceptions.DuplicateAccountException;
+
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MATRICNUMBER;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PASSWORD;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PRIVILEGE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_USERNAME;
-
-import seedu.address.logic.commands.exceptions.CommandException;
-import seedu.address.model.Model;
-import seedu.address.model.account.Account;
-import seedu.address.model.account.PrivilegeLevel;
-import seedu.address.model.account.exceptions.DuplicateAccountException;
 
 /**
  * Adds an account

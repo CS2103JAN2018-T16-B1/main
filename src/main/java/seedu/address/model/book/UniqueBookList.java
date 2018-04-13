@@ -1,16 +1,19 @@
 package seedu.address.model.book;
 
-import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
-
-import java.util.Iterator;
-import java.util.List;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import seedu.address.commons.util.CollectionUtil;
 import seedu.address.model.book.exceptions.BookNotFoundException;
 import seedu.address.model.book.exceptions.DuplicateBookException;
+
+import java.util.Iterator;
+import java.util.List;
+
+import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
+import static seedu.address.model.book.Avail.AVAILABLE;
+import static seedu.address.model.book.Avail.BORROWED;
+import static seedu.address.model.book.Avail.RESERVED;
 
 /**
  * A list of books that enforces uniqueness between its elements and does not allow nulls.
@@ -120,6 +123,53 @@ public class UniqueBookList implements Iterable<Book> {
             replacement.add(book);
         }
         setBooks(replacement);
+    }
+
+    public void replaceReturnedBook(Book target, Book returnedBook) throws BookNotFoundException {
+        requireNonNull(returnedBook);
+        int index = internalList.indexOf(target);
+        String status = target.getAvail().toString();
+        switch (status) {
+        case (BORROWED):
+            internalList.set(index, returnedBook);
+            break;
+        case (RESERVED):
+            internalList.set(index, returnedBook);
+            break;
+
+        default:
+            throw new BookNotFoundException();
+        }
+    }
+
+    public void replaceBorrowedBook(Book target, Book borrowedBook) throws BookNotFoundException {
+        requireNonNull(borrowedBook);
+
+        int index = internalList.indexOf(target);
+        String status = target.getAvail().toString();
+        switch (status) {
+        case (AVAILABLE):
+            internalList.set(index, borrowedBook);
+            break;
+
+        default:
+            throw new BookNotFoundException();
+        }
+    }
+
+    public void replaceReservedBook(Book target, Book reservedBook) throws BookNotFoundException {
+
+        requireNonNull(reservedBook);
+        int index = internalList.indexOf(target);
+        String status = target.getAvail().toString();
+        switch (status) {
+        case (BORROWED):
+            internalList.set(index, reservedBook);
+            break;
+
+        default:
+            throw new BookNotFoundException();
+        }
     }
 
     /**

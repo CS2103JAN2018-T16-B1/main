@@ -1,12 +1,12 @@
 //@@author QiuHaohao
 package seedu.address.storage;
 
+import seedu.address.commons.exceptions.DataConversionException;
+import seedu.address.model.account.UniqueAccountList;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-
-import seedu.address.commons.exceptions.DataConversionException;
-import seedu.address.model.account.UniqueAccountList;
 
 /**
  * Stores accountList data in a .ser file

@@ -1,9 +1,9 @@
 package seedu.address.model.book;
 
+import seedu.address.commons.util.StringUtil;
+
 import java.util.List;
 import java.util.function.Predicate;
-
-import seedu.address.commons.util.StringUtil;
 
 /**
  * Tests that a {@code Book}'s {@code Title} matches any of the keywords given.

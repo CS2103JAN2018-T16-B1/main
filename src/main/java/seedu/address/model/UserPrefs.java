@@ -1,8 +1,8 @@
 package seedu.address.model;
 
-import java.util.Objects;
-
 import seedu.address.commons.core.GuiSettings;
+
+import java.util.Objects;
 
 /**
  * Represents User's preferences.

@@ -1,14 +1,14 @@
 package seedu.address.logic.commands;
 
-import static java.util.Objects.requireNonNull;
-
-import java.util.Collections;
-import java.util.List;
-
 import seedu.address.logic.CommandHistory;
 import seedu.address.logic.UndoRedoStack;
 import seedu.address.model.Model;
 import seedu.address.model.account.PrivilegeLevel;
+
+import java.util.Collections;
+import java.util.List;
+
+import static java.util.Objects.requireNonNull;
 
 /**
  * Lists all the commands entered by user from the start of app launch.
