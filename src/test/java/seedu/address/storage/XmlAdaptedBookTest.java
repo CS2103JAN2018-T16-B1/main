@@ -1,21 +1,20 @@
 package seedu.address.storage;
 
-import static org.junit.Assert.assertEquals;
-import static seedu.address.storage.XmlAdaptedBook.MISSING_FIELD_MESSAGE_FORMAT;
-import static seedu.address.testutil.TypicalBooks.BREAKING;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.junit.Test;
-
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.book.Author;
 import seedu.address.model.book.Avail;
 import seedu.address.model.book.Isbn;
 import seedu.address.model.book.Title;
 import seedu.address.testutil.Assert;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.junit.Assert.assertEquals;
+import static seedu.address.storage.XmlAdaptedBook.MISSING_FIELD_MESSAGE_FORMAT;
+import static seedu.address.testutil.TypicalBooks.BREAKING;
 
 public class XmlAdaptedBookTest {
     private static final String INVALID_TITLE = "R@chel";

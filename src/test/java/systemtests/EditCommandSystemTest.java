@@ -1,5 +1,23 @@
 package systemtests;
 
+import org.junit.Test;
+import seedu.address.commons.core.Messages;
+import seedu.address.commons.core.index.Index;
+import seedu.address.logic.commands.EditCommand;
+import seedu.address.logic.commands.RedoCommand;
+import seedu.address.logic.commands.UndoCommand;
+import seedu.address.model.Model;
+import seedu.address.model.book.Author;
+import seedu.address.model.book.Avail;
+import seedu.address.model.book.Book;
+import seedu.address.model.book.Isbn;
+import seedu.address.model.book.Title;
+import seedu.address.model.book.exceptions.BookNotFoundException;
+import seedu.address.model.book.exceptions.DuplicateBookException;
+import seedu.address.model.tag.Tag;
+import seedu.address.testutil.BookBuilder;
+import seedu.address.testutil.BookUtil;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.AUTHOR_DESC_XVI;
@@ -29,25 +47,6 @@ import static seedu.address.testutil.TypicalBooks.KEYWORD_MATCHING_GIRL;
 import static seedu.address.testutil.TypicalBooks.XVI;
 import static seedu.address.testutil.TypicalBooks.YOU;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_BOOK;
-
-import org.junit.Test;
-
-import seedu.address.commons.core.Messages;
-import seedu.address.commons.core.index.Index;
-import seedu.address.logic.commands.EditCommand;
-import seedu.address.logic.commands.RedoCommand;
-import seedu.address.logic.commands.UndoCommand;
-import seedu.address.model.Model;
-import seedu.address.model.book.Author;
-import seedu.address.model.book.Avail;
-import seedu.address.model.book.Book;
-import seedu.address.model.book.Isbn;
-import seedu.address.model.book.Title;
-import seedu.address.model.book.exceptions.BookNotFoundException;
-import seedu.address.model.book.exceptions.DuplicateBookException;
-import seedu.address.model.tag.Tag;
-import seedu.address.testutil.BookBuilder;
-import seedu.address.testutil.BookUtil;
 
 public class EditCommandSystemTest extends CatalogueSystemTest {
 

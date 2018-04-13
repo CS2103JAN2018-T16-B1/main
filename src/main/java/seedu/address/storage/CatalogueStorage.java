@@ -1,11 +1,11 @@
 package seedu.address.storage;
 
-import java.io.IOException;
-import java.util.Optional;
-
 import seedu.address.commons.exceptions.DataConversionException;
 import seedu.address.model.Catalogue;
 import seedu.address.model.ReadOnlyCatalogue;
+
+import java.io.IOException;
+import java.util.Optional;
 
 /**
  * Represents a storage for {@link Catalogue}.

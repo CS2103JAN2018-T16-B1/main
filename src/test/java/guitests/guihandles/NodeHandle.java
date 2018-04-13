@@ -1,12 +1,12 @@
 package guitests.guihandles;
 
-import static java.util.Objects.requireNonNull;
-
-import java.util.Optional;
-
 import guitests.GuiRobot;
 import guitests.guihandles.exceptions.NodeNotFoundException;
 import javafx.scene.Node;
+
+import java.util.Optional;
+
+import static java.util.Objects.requireNonNull;
 
 /**
  * Provides access to a node in a JavaFx application for GUI testing purposes.

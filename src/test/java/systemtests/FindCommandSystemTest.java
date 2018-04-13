@@ -1,18 +1,6 @@
 package systemtests;
 
-import static org.junit.Assert.assertFalse;
-import static seedu.address.commons.core.Messages.MESSAGE_BOOKS_LISTED_OVERVIEW;
-import static seedu.address.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
-import static seedu.address.testutil.TypicalBooks.CALIFORNIA;
-import static seedu.address.testutil.TypicalBooks.DELIRIUM;
-import static seedu.address.testutil.TypicalBooks.GONE;
-import static seedu.address.testutil.TypicalBooks.KEYWORD_MATCHING_GIRL;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Test;
-
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.DeleteCommand;
 import seedu.address.logic.commands.FindCommand;
@@ -20,6 +8,17 @@ import seedu.address.logic.commands.RedoCommand;
 import seedu.address.logic.commands.UndoCommand;
 import seedu.address.model.Model;
 import seedu.address.model.tag.Tag;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertFalse;
+import static seedu.address.commons.core.Messages.MESSAGE_BOOKS_LISTED_OVERVIEW;
+import static seedu.address.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
+import static seedu.address.testutil.TypicalBooks.CALIFORNIA;
+import static seedu.address.testutil.TypicalBooks.DELIRIUM;
+import static seedu.address.testutil.TypicalBooks.GONE;
+import static seedu.address.testutil.TypicalBooks.KEYWORD_MATCHING_GIRL;
 
 public class FindCommandSystemTest extends CatalogueSystemTest {
 

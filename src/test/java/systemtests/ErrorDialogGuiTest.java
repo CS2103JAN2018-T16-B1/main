@@ -1,18 +1,17 @@
 package systemtests;
 
+import guitests.GuiRobot;
+import guitests.guihandles.AlertDialogHandle;
+import org.junit.Test;
+import seedu.address.commons.events.storage.DataSavingExceptionEvent;
+
+import java.io.IOException;
+
 import static org.junit.Assert.assertEquals;
 import static seedu.address.testutil.EventsUtil.postLater;
 import static seedu.address.ui.UiManager.FILE_OPS_ERROR_DIALOG_CONTENT_MESSAGE;
 import static seedu.address.ui.UiManager.FILE_OPS_ERROR_DIALOG_HEADER_MESSAGE;
 import static seedu.address.ui.UiManager.FILE_OPS_ERROR_DIALOG_STAGE_TITLE;
-
-import java.io.IOException;
-
-import org.junit.Test;
-
-import guitests.GuiRobot;
-import guitests.guihandles.AlertDialogHandle;
-import seedu.address.commons.events.storage.DataSavingExceptionEvent;
 
 public class ErrorDialogGuiTest extends CatalogueSystemTest {
 

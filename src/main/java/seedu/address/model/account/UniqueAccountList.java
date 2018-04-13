@@ -1,14 +1,14 @@
 //@@author QiuHaohao
 package seedu.address.model.account;
 
-import static java.util.Objects.requireNonNull;
+import seedu.address.model.account.exceptions.AccountNotFoundException;
+import seedu.address.model.account.exceptions.DuplicateAccountException;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import seedu.address.model.account.exceptions.AccountNotFoundException;
-import seedu.address.model.account.exceptions.DuplicateAccountException;
+import static java.util.Objects.requireNonNull;
 
 /**
  * A list of accounts that enforces uniqueness between its elements and does not allow nulls.

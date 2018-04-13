@@ -1,15 +1,5 @@
 package seedu.address.logic.parser;
 
-import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_AUTHOR;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_AVAIL;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_ISBN;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_TITLE;
-
-import java.util.Set;
-import java.util.stream.Stream;
-
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -19,6 +9,16 @@ import seedu.address.model.book.Book;
 import seedu.address.model.book.Isbn;
 import seedu.address.model.book.Title;
 import seedu.address.model.tag.Tag;
+
+import java.util.Set;
+import java.util.stream.Stream;
+
+import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_AUTHOR;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_AVAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ISBN;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TITLE;
 
 /**
  * Parses input arguments and creates a new AddCommand object

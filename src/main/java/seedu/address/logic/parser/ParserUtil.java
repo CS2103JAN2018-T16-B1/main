@@ -1,12 +1,5 @@
 package seedu.address.logic.parser;
 
-import static java.util.Objects.requireNonNull;
-
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
-
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.commons.util.StringUtil;
@@ -20,6 +13,13 @@ import seedu.address.model.book.Avail;
 import seedu.address.model.book.Isbn;
 import seedu.address.model.book.Title;
 import seedu.address.model.tag.Tag;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
+
+import static java.util.Objects.requireNonNull;
 
 /**
  * Contains utility methods used for parsing strings in the various *Parser classes.

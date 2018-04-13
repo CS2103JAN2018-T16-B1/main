@@ -1,14 +1,13 @@
 package systemtests;
 
-import java.util.concurrent.TimeoutException;
-import java.util.function.Supplier;
-
-import org.testfx.api.FxToolkit;
-
 import guitests.guihandles.MainWindowHandle;
 import javafx.stage.Stage;
+import org.testfx.api.FxToolkit;
 import seedu.address.TestApp;
 import seedu.address.model.ReadOnlyCatalogue;
+
+import java.util.concurrent.TimeoutException;
+import java.util.function.Supplier;
 
 /**
  * Contains helper methods that system tests require.

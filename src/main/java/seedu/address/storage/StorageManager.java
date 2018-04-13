@@ -1,11 +1,6 @@
 package seedu.address.storage;
 
-import java.io.IOException;
-import java.util.Optional;
-import java.util.logging.Logger;
-
 import com.google.common.eventbus.Subscribe;
-
 import seedu.address.commons.core.ComponentManager;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.events.model.AccountListChangedEvent;
@@ -15,6 +10,10 @@ import seedu.address.commons.exceptions.DataConversionException;
 import seedu.address.model.ReadOnlyCatalogue;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.account.UniqueAccountList;
+
+import java.io.IOException;
+import java.util.Optional;
+import java.util.logging.Logger;
 
 /**
  * Manages storage of Catalogue data in local storage.

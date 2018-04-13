@@ -1,21 +1,20 @@
 package seedu.address.ui;
 
+import guitests.guihandles.BookCardHandle;
+import guitests.guihandles.BookListPanelHandle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import org.junit.Before;
+import org.junit.Test;
+import seedu.address.commons.events.ui.JumpToListRequestEvent;
+import seedu.address.model.book.Book;
+
 import static org.junit.Assert.assertEquals;
 import static seedu.address.testutil.EventsUtil.postNow;
 import static seedu.address.testutil.TypicalBooks.getTypicalBooks;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_BOOK;
 import static seedu.address.ui.testutil.GuiTestAssert.assertCardDisplaysBook;
 import static seedu.address.ui.testutil.GuiTestAssert.assertCardEquals;
-
-import org.junit.Before;
-import org.junit.Test;
-
-import guitests.guihandles.BookCardHandle;
-import guitests.guihandles.BookListPanelHandle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import seedu.address.commons.events.ui.JumpToListRequestEvent;
-import seedu.address.model.book.Book;
 
 public class BookListPanelTest extends GuiUnitTest {
     private static final ObservableList<Book> TYPICAL_BOOKS =

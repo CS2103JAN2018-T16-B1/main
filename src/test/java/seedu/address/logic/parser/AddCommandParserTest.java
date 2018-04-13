@@ -1,5 +1,15 @@
 package seedu.address.logic.parser;
 
+import org.junit.Test;
+import seedu.address.logic.commands.AddCommand;
+import seedu.address.model.book.Author;
+import seedu.address.model.book.Avail;
+import seedu.address.model.book.Book;
+import seedu.address.model.book.Isbn;
+import seedu.address.model.book.Title;
+import seedu.address.model.tag.Tag;
+import seedu.address.testutil.BookBuilder;
+
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.commands.CommandTestUtil.AUTHOR_DESC_XVI;
 import static seedu.address.logic.commands.CommandTestUtil.AUTHOR_DESC_YOU;
@@ -30,17 +40,6 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_TITLE_XVI;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TITLE_YOU;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
-
-import org.junit.Test;
-
-import seedu.address.logic.commands.AddCommand;
-import seedu.address.model.book.Author;
-import seedu.address.model.book.Avail;
-import seedu.address.model.book.Book;
-import seedu.address.model.book.Isbn;
-import seedu.address.model.book.Title;
-import seedu.address.model.tag.Tag;
-import seedu.address.testutil.BookBuilder;
 
 public class AddCommandParserTest {
     private AddCommandParser parser = new AddCommandParser();

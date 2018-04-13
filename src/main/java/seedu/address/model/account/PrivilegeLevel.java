@@ -1,11 +1,11 @@
 //@@author QiuHaohao
 package seedu.address.model.account;
 
-import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.AppUtil.checkArgument;
-
 import java.io.Serializable;
 import java.util.Objects;
+
+import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
  * Represents the privilegeLevel of an account/a command

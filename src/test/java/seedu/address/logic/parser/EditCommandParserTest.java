@@ -1,5 +1,16 @@
 package seedu.address.logic.parser;
 
+import org.junit.Test;
+import seedu.address.commons.core.index.Index;
+import seedu.address.logic.commands.EditCommand;
+import seedu.address.logic.commands.EditCommand.EditBookDescriptor;
+import seedu.address.model.book.Author;
+import seedu.address.model.book.Avail;
+import seedu.address.model.book.Isbn;
+import seedu.address.model.book.Title;
+import seedu.address.model.tag.Tag;
+import seedu.address.testutil.EditBookDescriptorBuilder;
+
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.commands.CommandTestUtil.AUTHOR_DESC_XVI;
 import static seedu.address.logic.commands.CommandTestUtil.AUTHOR_DESC_YOU;
@@ -30,18 +41,6 @@ import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSucces
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_BOOK;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_BOOK;
 import static seedu.address.testutil.TypicalIndexes.INDEX_THIRD_BOOK;
-
-import org.junit.Test;
-
-import seedu.address.commons.core.index.Index;
-import seedu.address.logic.commands.EditCommand;
-import seedu.address.logic.commands.EditCommand.EditBookDescriptor;
-import seedu.address.model.book.Author;
-import seedu.address.model.book.Avail;
-import seedu.address.model.book.Isbn;
-import seedu.address.model.book.Title;
-import seedu.address.model.tag.Tag;
-import seedu.address.testutil.EditBookDescriptorBuilder;
 
 public class EditCommandParserTest {
 
