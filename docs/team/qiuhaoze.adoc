@@ -1,4 +1,4 @@
-= Qiu Hao Ze - Project Portfolio
+= Qiu Haoze - Project Portfolio
 :imagesDir: ../images
 :stylesDir: ../stylesheets
 
@@ -10,32 +10,25 @@
 
 * This is a desktop Catalogue application. It has a GUI but most of the user interactions happen using a CLI (Command Line Interface).
 * It is a Java application intended for librarians, students and guests using the library.
+* We started the project based on an AddressBook sample application(https://github.com/nus-cs2103-AY1718S2/addressbook-level4) that is around 10KLoC.
 
 == Summary of contributions
 
-* *Major enhancement*:
-** What it does:
-** Justification:
-** Highlights:
-** Credits:
+* *Major enhancement*: Create Account related models, implemented authentication(login/logout) and privilege and serialised file storage for UniqueAccountList
+** What it does: It provides authentication mechanism for the app.
+** Justification: This feature enables the app the authenticate users and give them different privilege.
+** Highlights: This enhancement is related to all components of the program except UI, it required a careful analysis of the whole system before it is implemented.
+** Credits: Name Class under model/account and its test is borrowed from AddressBook Level 4.
 
-* *Minor enhancement*:
+* *Minor enhancement*: Changed browser panel to display a GoodReads page of the selected book(A page indicating no Internet if there is no Internet Connectivity)
 
-* *Code contributed*:
+* *Code contributed*: https://github.com/CS2103JAN2018-T16-B1/main/blob/master/collated/functional/QiuHaohao.md[Functional] | https://github.com/CS2103JAN2018-T16-B1/main/blob/master/collated/test/QiuHaohao.md[Test]
 
 * *Other contributions*:
 
-** Project management:
+** Project management: Managed release v1.3 - v1.5(4 releases) on GitHub, set up Travis and Coverall in team repo.
 
-** Enhancements to existing features:
-
-** Documentation:
-
-** Community:
-
-** Tools:
-
-_{you can add/remove categories in the list above}_
+** Documentation: Updated documentation of my enhancements
 
 == Contributions to the User Guide
 
@@ -44,9 +37,9 @@ _{you can add/remove categories in the list above}_
 |_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users._
 |===
 
-include::../UserGuide.adoc[tag=undoredo]
+include::../UserGuide.adoc[tag=account]
 
-include::../UserGuide.adoc[tag=dataencryption]
+include::../UserGuide.adoc[tag=loginout]
 
 == Contributions to the Developer Guide
 
@@ -54,13 +47,6 @@ include::../UserGuide.adoc[tag=dataencryption]
 |_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._
 |===
 
-include::../DeveloperGuide.adoc[tag=undoredo]
-
-include::../DeveloperGuide.adoc[tag=dataencryption]
+include::../DeveloperGuide.adoc[tag=loginout]
 
 
-== PROJECT: PowerPointLabs
-
----
-
-_{Optionally, you may include other projects in your portfolio.}_

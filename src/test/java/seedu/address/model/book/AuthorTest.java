@@ -19,6 +19,7 @@ public class AuthorTest {
         Assert.assertThrows(IllegalArgumentException.class, () -> new Author(invalidAuthor));
     }
 
+    //@@author khiayi
     @Test
     public void isValidAuthor() {
         // null name

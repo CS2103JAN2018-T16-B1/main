@@ -13,13 +13,16 @@
 
 == Summary of contributions
 
-* *Major enhancement*:
-** What it does:
-** Justification:
-** Highlights:
-** Credits:
+* *Major enhancement*: added the ability to add and delete account Commands and the add/delete command parsers
+** What it does: allows the user to add a new account into the existing account list and delete an account based on the username inside the account list.
+** Justification: This feature improves the product significantly because a librarian can create borrowers (with privilege level of student) and create new administrators (with privilege level of librarian). The database of students will allow the students of National University of Singapore to borrow, return and reserve a book of their desire inside the library.
+** Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.
+** Credits: NIL
 
-* *Minor enhancement*:
+* *Minor enhancement*: Improved the CLIsyntax to parse Account Level commands
+** What it does: parses the account name, account matriculation number, account Username, account Password and account privilege level to create an account in the system database
+** Justification:This feature allows the system to parse the parameters necessary to create the user account in the system.
+** Highlights: This enhancement affects existing commands (add Account Command) and existing commands such as an “edit Account Command”. The implementation required creation of new methods inside the model manager and account sub-classes.
 
 * *Code contributed*:
 

@@ -150,6 +150,7 @@ public class UniqueAccountList implements Serializable, Iterable<Account> {
         return internalList.size();
     }
 
+
     @Override
     public Iterator<Account> iterator() {
         return internalList.iterator();

@@ -13,23 +13,31 @@
 
 == Summary of contributions
 
-* *Major enhancement*:
-** What it does:
-** Justification:
-** Highlights:
-** Credits:
+* *Major enhancement*: Added the ability to clear all the accounts of list of accounts
+** What it does: Allows the user (logged in as a librarian) to clear in one click all the created accounts.
+** Justification: This feature improves the product significantly because a user can quickly and efficiently remove all the accounts. It helps save time.
+** Highlights: This feature improves the product significantly because a user can quickly and efficiently remove all the accounts. It helps save time.
+** Credits: N/A
 
-* *Minor enhancement*:
+* *Minor enhancement*: Added an autocomplete function. It adds the tags for the required functions.
 
-* *Code contributed*:
+* *Code contributed*: [Functional code] [Test code] [Unused code]
 
 * *Other contributions*:
 
 ** Project management:
 
 ** Enhancements to existing features:
+Tag colors: Assign a new color each time a new tag is created so that the tags have different colors. +
+Created the tests basis for the account test
 
 ** Documentation:
+Fixed the issues in User Guide from in-class testing session (see issues from bot. +
+Added in User Guide the new functions
+
+** Others
+Created the old book system.
+
 
 ** Community:
 
@@ -58,6 +66,12 @@ include::../DeveloperGuide.adoc[tag=undoredo]
 
 include::../DeveloperGuide.adoc[tag=dataencryption]
 
+** Quick Start Section
+image::UI_final.png[width="790"]
+1 - Command box: type the commands in this section
+2 - Result Display: Show the result of what you typed above
+3 - Book List: List of all the books in the Central Library
+4 – Information Section: when you click on a book, the webpage on goodreads will open and display additional information
 
 == PROJECT: PowerPointLabs
 

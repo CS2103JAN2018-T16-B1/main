@@ -1,8 +1,9 @@
+//@@author khiayi
 package seedu.address.model.book;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
-//@@author khiayi
+
 
 /**
  * Represents a Book's availability in the catalogue.
@@ -18,6 +19,7 @@ public class Avail {
         + "2. " + BORROWED + "\n"
         + "3. " + RESERVED + "\n"
         + "4. " + BORROWED_AND_RESERVED + "\n";
+
 
     public final String value;
 
@@ -41,6 +43,9 @@ public class Avail {
             || test.equals(RESERVED) || test.equals(BORROWED_AND_RESERVED);
     }
 
+    public String getValue() {
+        return value;
+    }
     //@@author
     @Override
     public String toString() {

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <catalogue>
+    <!-- @@author khiayi -->
     <!-- Book with invalid avail field -->
     <books>
-        <title>Hans Muster</title>
-        <author isPrivate="false">Muster Hans</author>
-        <isbn isPrivate="false">9482424</isbn>
+        <title>Animal Farm</title>
+        <author isPrivate="false">George Orwell</author>
+        <isbn isPrivate="false">9780736692427</isbn>
         <avail isPrivate="false">not sure</avail>
     </books>
 </catalogue>
