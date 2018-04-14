@@ -83,24 +83,25 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 Format: `login [username] [password]` +
 Privilege Level: 0(Guest)
 
-Default account: +
-Username: admin +
+Default account:
+```
+Username: admin
 Password: admin
+```
 
 Login with different accounts:
-1 - Add account using adda command +
-2 – Use the username and password that you entered for the above account +
-e.g. adda n/Victor Tardieu m/ A1234567N u/e12345 p/secretpassword l/1
+
+* Add account using accAccount command +
+* Use the username and password that you entered for the above account +
+e.g. accAccount n/Victor Tardieu m/ A1234567N u/e12345 p/secretpassword l/1
 
 [NOTE]
-Different accounts might have different privilege levels. A command can only be executed when the privilege level of the current user is greater or equal to the command's required level. The default admin account can be logged in with 'login admin admin'
+Different accounts might have different privilege levels. A command can only be executed when the privilege level of the current user is no lower than the command's required level.
 
 === Logout from Student/Librarian : `Logout`
 
 Format: `logout` +
-Privilege Level: +
-From 2(Librarian) you are going back to 0(Guest) +
-From 1(Student) you are going back to 0(Guest) +
+Privilege Level: 1(Student)
 
 [NOTE]
 Remember that when one logs out from your account, some commands (such as add a book for a librarian) won’t be available anymore. To be able to do them again, one will have to login again with his unique credentials.
