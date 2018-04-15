@@ -94,6 +94,7 @@ When you are ready to start coding,
 == Design
 
 [[Design-Architecture]]
+// tag::Design[]
 === Architecture
 
 .Architecture Diagram
@@ -102,7 +103,7 @@ image::Architecture.png[width="600"]
 The *_Architecture Diagram_* given above explains the high-level design of the App. Given below is a quick overview of each component.
 
 [TIP]
-The `.pptx` files used to create diagrams in this document can be found in the link:{repoURL}/docs/diagrams/[diagrams] folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose `Save as picture`.
+The `.pptx` files used to create diagrams in this document can be found in the link:https://github.com/CS2103JAN2018-T16-B1/main/tree/master/docs/diagrams[diagrams] folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose `Save as picture`.
 
 `Main` has only one class called link:{repoURL}/src/main/java/seedu/address/MainApp.java[`MainApp`]. It is responsible for,
 
@@ -151,6 +152,8 @@ image::SDforDeleteBookEventHandling.png[width="800"]
 Note how the event is propagated through the `EventsCenter` to the `Storage` and `UI` without `Model` having to be coupled to either of them. This is an example of how this Event Driven approach helps us reduce direct coupling between components.
 
 The sections below give more details of each component.
+// end::Design[]
+
 
 [[Design-Ui]]
 === UI component
@@ -171,6 +174,7 @@ The `UI` component,
 * Responds to events raised from various parts of the App and updates the UI accordingly.
 
 [[Design-Logic]]
+// tag::logicComponent[]
 === Logic component
 
 [[fig-LogicClassDiagram]]
@@ -192,6 +196,7 @@ Given below is the Sequence Diagram for interactions within the `Logic` componen
 
 .Interactions Inside the Logic Component for the `delete 1` Command
 image::DeleteBookSdForLogic.png[width="800"]
+// end::logicComponent[]
 
 //tag::model
 [[Design-Model]]
@@ -981,6 +986,7 @@ Use case ends.
 [discrete]
 // end::usecaseloginoutlistfind[]
 
+
 // tag::usecaseAddEditHelpSelect[]
 === Use case: Add book
 
@@ -1054,6 +1060,7 @@ Use case ends.
 *Extensions*
 
 [none]
+
 * 2a. The list is empty
 +
 Use case ends.
@@ -1068,8 +1075,84 @@ Use case ends.
 ** 4a1. Catalogue shows an error message.
 +
 
+
 [discrete]
 // end::usecaseAddEditHelpSelect[]
+
+== Use case: Borrow book
+
+*MSS*
+
+1. User login an account with librarian privilege
+2. User requests to list books
+3. User requests to borrow a specific book in the list
+4. List will book with 'Borrowed' availability
+
+*Extensions*
+
+[none]
+
+* 2a. The book is already borrowed or reserved
++
+Catalogue shows an error message.
+
+* 3a. The given index is invalid.
++
+[none]
+** 3a1. Catalogue shows an error message.
++
+Use case resumes at step 2.
+
+[discrete]
+== Use case: Return book
+
+*MSS*
+
+1. User login an account with librarian privilege
+2. User requests to list books
+3. User requests to return a specific book in the list
+4. List will book with 'Available' availability
+
+*Extensions*
+
+[none]
+
+* 2a. The book is already available
++
+Catalogue shows an error message.
+
+* 3a. The given index is invalid.
++
+[none]
+** 3a1. Catalogue shows an error message.
++
+Use case resumes at step 2.
+
+[discrete]
+== Use case: Reserve book
+
+*MSS*
+
+1. User login an account with librarian privilege
+2. User requests to list books
+3. User requests to reserve a specific book in the list
+4. List will book with 'Reserved' availability
+
+*Extensions*
+
+[none]
+
+* 2a. The book is available
++
+Catalogue shows an error message.
+
+* 3a. The given index is invalid.
++
+[none]
+** 3a1. Catalogue shows an error message.
++
+Use case resumes at step 2.
+
 [appendix]
 == Non Functional Requirements
 
@@ -1248,6 +1331,43 @@ _{ more test cases ... }_
 // end::manualtestAddEditHelpSelect[]
 
 _{ more test cases ... }_
+
+=== Borrowing a book
+
+. Borrowing a book while all books are listed
+
+.. Prerequisites: List all books using the `list` command. Multiple books in the list.
+.. Test case: `borrow 1` +
+   Expected: First book will be borrowed from the list, given that it is available. Details of the borrowed book will be shown in the status message.
+.. Test case: `borrow 0` +
+   Expected: No book is borrowed. Error details shown in the status message. Status bar remains the same.
+  .. Other incorrect borrow commands to try: `borrow`, `borrow x`(where x is larger than list size or not an integer), `borrow [valid index]`(where the book is not available)
+  Expected: Similar to previous.
+
+=== Returning a book
+
+. Returning a book while all books are listed
+
+.. Prerequisites: List all books using the `list` command. Multiple books in the list.
+.. Test case: `return 1` +
+   Expected: First book will be returned from the list, given that it is borrowed or reserved. Details of the returned book will be shown in the status message.
+.. Test case: `return 0` +
+   Expected: No book is returned. Error details shown in the status message. Status bar remains the same.
+  .. Other incorrect return commands to try: `return`, `return x`(where x is larger than list size or not an integer), `return [valid index]`(where the book is available)
+  Expected: Similar to previous.
+
+=== Reserving a book
+
+. Reserving a book while all books are listed
+
+.. Prerequisites: List all books using the `list` command. Multiple books in the list.
+.. Test case: `reserve 1` +
+   Expected: First book will be reserved from the list, given that it is borrowed. Details of the reserved book will be shown in the status message.
+.. Test case: `reserve 0` +
+   Expected: No book is reserved. Error details shown in the status message. Status bar remains the same.
+  .. Other incorrect reserve commands to try: `reserve`, `reserve x`(where x is larger than list size or not an integer), `reserve [valid index]`(where the book is not borrowed)
+  Expected: Similar to previous.
+
 
 === Saving data
 

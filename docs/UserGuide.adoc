@@ -23,6 +23,7 @@ Password: admin
 ```
 You can login the default account with this command: 'login admin admin'
 // end::defaultaccount[]
+
 == Introduction
 
 Catalogue is for *NUS students* who prefer to use a desktop app for finding, borrowing and returning english books at
@@ -47,7 +48,7 @@ This app will not work with earlier versions of Java 8.
 .  Copy the file to the folder you want to use as the home folder for your Catalogue.
 .  Double-click the file to start the app. The GUI should appear in a few seconds.
 +
-image::UI_final.png[width="790"]
+image::UserInterfaceFinal.png[width="790"]
 +
 1 - Command box: type the commands in this section +
 2 - Result Display: Show the result of what you typed above +
@@ -87,10 +88,10 @@ Default account: +
 Username: admin +
 Password: admin
 
-Login with different accounts:
+Login with different accounts: +
 1 - Add account using adda command +
 2 – Use the username and password that you entered for the above account +
-e.g. adda n/Victor Tardieu m/ A1234567N u/e12345 p/secretpassword l/1
+e.g. adda n/Victor Tardieu m/A1234567N u/victor123 p/victor123 l/1
 
 [NOTE]
 Different accounts might have different privilege levels. A command can only be executed when the privilege level of the current user is greater or equal to the command's required level. The default admin account can be logged in with 'login admin admin'
@@ -171,9 +172,10 @@ Privilege Level: 2(Librarian)
 
 Examples:
 
+
 * `edit 1 i/9780736692426 av/Available` +
 Edits the isbn number and availability author of the 1st book to be `9780736692426` and `Available` respectively.
-* `edit 2 n/Breaking Dawn t/` +
+* `edit 2 t/Breaking Dawn tag/` +
 Edits the title of the 2nd book to be `Breaking Dawn` and clears all existing tags.
 // end::edit[]
 
@@ -339,11 +341,12 @@ Clears all books from the catalogue. +
 Format: `clear` +
 Privilege Level: 2(Librarian)
 
-=== Borrow a book: `borrow`[TO BE IMPLEMENTED]
+// tag::Borrow[]
+=== Borrow a book: `borrow`
 
 Borrow the specified book from the catalogue. +
 Format: `borrow INDEX` +
-Privilege Level: 1(Student)
+Privilege Level: 2(Librarian)
 
 ****
 * Borrow the book at the specified `INDEX`.
@@ -357,20 +360,17 @@ Examples:
 `borrow 2` +
 Borrow the 2nd book in the catalogue.
 
-=== Clearing all accounts : `cleara`
+[TIP]
+Press TAB after writing `borrow` to use the auto-complete function.
 
-Clears all accounts from AccountList. +
-Format: `clear` +
-Privilege Level: 2(Librarian)
+Examples:
+* `borrow` -> (press TAB) -> `borrow 1`
 
-[NOTE]
-When an librarian clears the list of accounts, it is automatically logged out.
-
-=== Return a book : `return`[TO BE IMPLEMENTED]
+=== Return a book : `return`
 
 Return a specified book to the catalogue +
 Format: `return INDEX` +
-Privilege Level: 1(Student)
+Privilege Level: 2(Librarian)
 
 [NOTE]
 Can only return book that has been borrowed
@@ -381,20 +381,56 @@ Can only return book that has been borrowed
 * The index *must be a positive integer* 1, 2, 3, ...
 ****
 
-=== Renew a book : `renew` [TO BE IMPLEMENTED]
+[TIP]
+Press TAB after writing `return` to use the auto-complete function.
+
+Examples:
+
+* `return` -> (press TAB) -> `return 1`
+
+=== Reserve a book : `reserve`
 
 Renew a specific book from the Catalogue +
-Format: `renew INDEX` +
-Privilege Level: 1(Student)
+Format: `reserve INDEX` +
+Privilege Level: 2(Librarian)
 
 [NOTE]
-Can only renew book that has been borrowed
+Can only reserve book that has been borrowed
 
 ****
-* Renew the book at the specified `INDEX`.
+* Reserve the book at the specified `INDEX`.
 * The index refers to the index number shown in the most recent listing.
 * The index *must be a positive integer* 1, 2, 3, ...
 ****
+
+[TIP]
+Press TAB after writing `reserve` to use the auto-complete function.
+
+Examples:
+
+* `reserve` -> (press TAB) -> `reserve 1`
+// end::Borrow[]
+
+
+=== Clearing all accounts : `cleara`
+
+Clears all accounts from AccountList. +
+Format: `clear` +
+Privilege Level: 2(Librarian)
+
+****
+* Removes all the accounts from the list of accounts
+* Adds the default administrator account: admin admin
+****
+
+[NOTE]
+When an librarian clears the list of accounts, it is automatically logged out.
+
+Example:
+* `list` +
+`cleara` +
+All accounts removed from the list of accounts
+
 
 === Add an account : `addAccount` [TO BE IMPLEMENTED]
 
@@ -408,11 +444,11 @@ Examples:
 * `addAccount n/Tom Madison m/A1234567T u/tom p/tom123 l/2`
 
 [TIP]
-Press TAB after writing `addAccount` to use the auto-complete function.
+Press TAB after writing `adda` to use the auto-complete function.
 
 Examples:
 
-* `addAccount` --> (press TAB) --> `addAccount n/ m/ u/ p/ l/ `
+* `adda` --> (press TAB) --> `adda n/ m/ u/ p/ l/ `
 
 === Deleting an account : `deletea` [TO BE IMPLEMENTED]
 
@@ -431,6 +467,13 @@ Examples:
 Deletes account linked to A1234567J --> (Jack Morgan).
 * `delete A0123456M` +
 Deletes the account linked to A0123456M.
+
+[TIP]
+Press TAB after writing `deletea` to use the auto-complete function.
+
+Examples:
+
+* `deletea` --> (press TAB) --> `deletea 1 `
 
 === Exiting the program : `exit`
 

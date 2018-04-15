@@ -124,7 +124,7 @@ public class UniqueBookList implements Iterable<Book> {
         }
         setBooks(replacement);
     }
-
+    //@@author LeKhangTai
     /**
      * @param target select the index book to be returned
      * @param returnedBook duplicated book that will replace original book
@@ -186,7 +186,7 @@ public class UniqueBookList implements Iterable<Book> {
             throw new BookNotFoundException();
         }
     }
-
+    //@@author
     /**
      * Returns the backing list as an unmodifiable {@code ObservableList}.
      */
