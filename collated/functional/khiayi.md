@@ -1,5 +1,5 @@
 # khiayi
-###### \java\seedu\address\logic\commands\AddCommand.java
+###### /java/seedu/address/logic/commands/AddCommand.java
 ``` java
 package seedu.address.logic.commands;
 
@@ -76,7 +76,7 @@ public class AddCommand extends UndoableCommand {
     }
 
 ```
-###### \java\seedu\address\logic\commands\EditCommand.java
+###### /java/seedu/address/logic/commands/EditCommand.java
 ``` java
 package seedu.address.logic.commands;
 
@@ -215,7 +215,7 @@ public class EditCommand extends UndoableCommand {
     }
 
 ```
-###### \java\seedu\address\model\book\Author.java
+###### /java/seedu/address/model/book/Title.java
 ``` java
 package seedu.address.model.book;
 
@@ -223,34 +223,36 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
- * Represents a Book's author in the catalogue.
- * Guarantees: immutable; is valid as declared in {@link #isValidAuthor(String)}
+ * Represents a Book's name in the catalogue.
+ * Guarantees: immutable; is valid as declared in {@link #isValidTitle(String)}
  */
-public class Author {
-
-    public static final String MESSAGE_AUTHOR_CONSTRAINTS =
-        "Book author should only contain alphanumeric characters and spaces, and it should not be blank";
+public class Title {
+```
+###### /java/seedu/address/model/book/Title.java
+``` java
+    public static final String MESSAGE_TITLE_CONSTRAINTS =
+        "Book titles should only contain alphanumeric characters and spaces, and it should not be blank";
 
     /*
-     * The first character of the author must not be a whitespace,
+     * The first character of the title must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
      */
-    public static final String AUTHOR_VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
+    public static final String TITLE_VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
 
-    public final String value;
+    public final String fullTitle;
 
     /**
-     * Constructs an {@code Author}.
+     * Constructs a {@code Title}.
      *
-     * @param author A valid author.
+     * @param title A valid title.
      */
-    public Author(String author) {
-        requireNonNull(author);
-        checkArgument(isValidAuthor(author), MESSAGE_AUTHOR_CONSTRAINTS);
-        this.value = author;
+    public Title(String title) {
+        requireNonNull(title);
+        checkArgument(isValidTitle(title), MESSAGE_TITLE_CONSTRAINTS);
+        this.fullTitle = title;
     }
 ```
-###### \java\seedu\address\model\book\Avail.java
+###### /java/seedu/address/model/book/Avail.java
 ``` java
 package seedu.address.model.book;
 
@@ -295,7 +297,42 @@ public class Avail {
     }
 
 ```
-###### \java\seedu\address\model\book\Book.java
+###### /java/seedu/address/model/book/Author.java
+``` java
+package seedu.address.model.book;
+
+import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.AppUtil.checkArgument;
+
+/**
+ * Represents a Book's author in the catalogue.
+ * Guarantees: immutable; is valid as declared in {@link #isValidAuthor(String)}
+ */
+public class Author {
+
+    public static final String MESSAGE_AUTHOR_CONSTRAINTS =
+        "Book author should only contain alphanumeric characters and spaces, and it should not be blank";
+
+    /*
+     * The first character of the author must not be a whitespace,
+     * otherwise " " (a blank string) becomes a valid input.
+     */
+    public static final String AUTHOR_VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
+
+    public final String value;
+
+    /**
+     * Constructs an {@code Author}.
+     *
+     * @param author A valid author.
+     */
+    public Author(String author) {
+        requireNonNull(author);
+        checkArgument(isValidAuthor(author), MESSAGE_AUTHOR_CONSTRAINTS);
+        this.value = author;
+    }
+```
+###### /java/seedu/address/model/book/Book.java
 ``` java
 package seedu.address.model.book;
 
@@ -408,7 +445,7 @@ public class Book {
 
 }
 ```
-###### \java\seedu\address\model\book\Isbn.java
+###### /java/seedu/address/model/book/Isbn.java
 ``` java
 package seedu.address.model.book;
 
@@ -435,42 +472,5 @@ public class Isbn {
         requireNonNull(isbn);
         checkArgument(isValidIsbn(isbn), MESSAGE_ISBN_CONSTRAINTS);
         this.value = isbn;
-    }
-```
-###### \java\seedu\address\model\book\Title.java
-``` java
-package seedu.address.model.book;
-
-import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.AppUtil.checkArgument;
-
-/**
- * Represents a Book's name in the catalogue.
- * Guarantees: immutable; is valid as declared in {@link #isValidTitle(String)}
- */
-public class Title {
-```
-###### \java\seedu\address\model\book\Title.java
-``` java
-    public static final String MESSAGE_TITLE_CONSTRAINTS =
-        "Book titles should only contain alphanumeric characters and spaces, and it should not be blank";
-
-    /*
-     * The first character of the title must not be a whitespace,
-     * otherwise " " (a blank string) becomes a valid input.
-     */
-    public static final String TITLE_VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
-
-    public final String fullTitle;
-
-    /**
-     * Constructs a {@code Title}.
-     *
-     * @param title A valid title.
-     */
-    public Title(String title) {
-        requireNonNull(title);
-        checkArgument(isValidTitle(title), MESSAGE_TITLE_CONSTRAINTS);
-        this.fullTitle = title;
     }
 ```

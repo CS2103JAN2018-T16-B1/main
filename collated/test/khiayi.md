@@ -1,373 +1,5 @@
 # khiayi
-###### \data\XmlCatalogueStorageTest\invalidAndValidBookCatalogue.xml
-``` xml
-    <!-- Valid Book -->
-    <books>
-        <title>Animal Farm</title>
-        <author isPrivate="false">George Orwell</author>
-        <isbn isPrivate="false">9780736692427</isbn>
-        <avail isPrivate="false">Available</avail>
-    </books>
-    <!-- Book with invalid isbn field -->
-    <books>
-        <title>Animal Farm</title>
-        <author isPrivate="false">George Orwell</author>
-        <isbn isPrivate="false">978073669242a</isbn>
-        <avail isPrivate="false">Available</avail>
-    </books>
-</catalogue>
-```
-###### \data\XmlCatalogueStorageTest\invalidBookCatalogue.xml
-``` xml
-    <books>
-        <title>Ha!ns Mu@ster</title>
-        <author isPrivate="false">Muster Hans</author>
-        <isbn isPrivate="false">9482424</isbn>
-        <avail isPrivate="false">Available</avail>
-    </books>
-</catalogue>
-```
-###### \data\XmlSerializableCatalogueTest\invalidBookCatalogue.xml
-``` xml
-    <!-- Book with invalid avail field -->
-    <books>
-        <title>Animal Farm</title>
-        <author isPrivate="false">George Orwell</author>
-        <isbn isPrivate="false">9780736692427</isbn>
-        <avail isPrivate="false">not sure</avail>
-    </books>
-</catalogue>
-```
-###### \data\XmlSerializableCatalogueTest\typicalBooksCatalogue.xml
-``` xml
-<catalogue>
-    <books>
-        <title>Animal Farm</title>
-        <author>George Orwell</author>
-        <isbn>9780736692427</isbn>
-        <avail>Available</avail>
-        <tagged>political</tagged>
-        <tagged>satire</tagged>
-    </books>
-    <books>
-        <title>Breaking Dawn</title>
-        <author>Stephenie Meyer</author>
-        <isbn>9780316067928</isbn>
-        <avail>Available</avail>
-        <tagged>fiction</tagged>
-    </books>
-    <books>
-        <title>California Girl</title>
-        <author>Jefferson Parker</author>
-        <isbn>9780060562373</isbn>
-        <avail>Available</avail>
-        <tagged>unlabelled</tagged>
-    </books>
-    <books>
-        <title>Delirium</title>
-        <author>Lauren Oliver</author>
-        <isbn>9780061726835</isbn>
-        <avail>Available</avail>
-    </books>
-    <books>
-        <title>Emma</title>
-        <author>Jane Austen</author>
-        <isbn>9780141439587</isbn>
-        <avail>Available</avail>
-    </books>
-    <books>
-        <title>Fateful</title>
-        <author>Claudia Gray</author>
-        <isbn>9780062006202</isbn>
-        <avail>Available</avail>
-    </books>
-    <books>
-        <title>Gone Girl</title>
-        <author>Gillian Flynn</author>
-        <isbn>9780753827666</isbn>
-        <avail>Available</avail>
-    </books>
-    <tagged>political</tagged>
-    <tagged>satire</tagged>
-    <tagged>fiction</tagged>
-    <tagged>unlabelled</tagged>
-</catalogue>
-```
-###### \data\XmlUtilTest\invalidBookField.xml
-``` xml
-<!-- Book with an invalid isbn field -->
-<book>
-    <title>Animal Farm</title>
-    <author>George Orwell</author>
-    <isbn>9482asf424</isbn>
-    <avail>Borrowed</avail>
-    <tagged>political</tagged>
-</book>
-```
-###### \data\XmlUtilTest\missingBookField.xml
-``` xml
-<!-- Book with missing title field -->
-<book>
-    <isbn>9780736692427</isbn>
-    <author>George Orwell</author>
-    <avail>Borrowed</avail>
-    <tagged>political</tagged>
-</book>
-```
-###### \data\XmlUtilTest\validBook.xml
-``` xml
-<book>
-    <title>Animal Farm</title>
-    <author>George Orwell</author>
-    <isbn>9780736692427</isbn>
-    <avail>Borrowed</avail>
-    <tagged>political</tagged>
-</book>
-```
-###### \data\XmlUtilTest\validCatalogue.xml
-``` xml
-<catalogue>
-    <books>
-        <title>Animal Farm</title>
-        <author isPrivate="false">George Orwell</author>
-        <isbn isPrivate="false">9780736692427</isbn>
-        <avail isPrivate="false">Available</avail>
-    </books>
-    <books>
-        <title>Breaking Dawn</title>
-        <author isPrivate="false">Stephenie Meyer</author>
-        <isbn isPrivate="false">9780316067928</isbn>
-        <avail isPrivate="false">Available</avail>
-    </books>
-    <books>
-        <title>California Girl</title>
-        <author isPrivate="false">Jefferson Parker</author>
-        <isbn isPrivate="false">9780060562373</isbn>
-        <avail isPrivate="false">Available</avail>
-    </books>
-    <books>
-        <title>Delirium</title>
-        <author isPrivate="false">Lauren Oliver</author>
-        <isbn isPrivate="false">9780061726835</isbn>
-        <avail isPrivate="false">Available</avail>
-    </books>
-    <books>
-        <title>Emma</title>
-        <author isPrivate="false">Jane Austen</author>
-        <isbn isPrivate="false">9780141439587</isbn>
-        <avail isPrivate="false">Available</avail>
-    </books>
-    <books>
-        <title>Fateful</title>
-        <author isPrivate="false">Claudia Gray</author>
-        <isbn isPrivate="false">9780062006202</isbn>
-        <avail isPrivate="false">Available</avail>
-
-    </books>
-    <books>
-        <title>Gone Girl</title>
-        <author isPrivate="false">Gillian Flynn</author>
-        <isbn isPrivate="false">9780753827666</isbn>
-        <avail isPrivate="false">Available</avail>
-    </books>
-    <books>
-        <title>Holes</title>
-        <author isPrivate="false">Louis Sachar</author>
-        <isbn isPrivate="false">9780439244190</isbn>
-        <avail isPrivate="false">Available</avail>
-    </books>
-    <books>
-        <title>Invisible Man</title>
-        <author isPrivate="false">Ralph Ellison</author>
-        <isbn isPrivate="false">9780140023350</isbn>
-        <avail isPrivate="false">Available</avail>
-    </books>
-</catalogue>
-```
-###### \java\seedu\address\model\book\AuthorTest.java
-``` java
-    @Test
-    public void isValidAuthor() {
-        // null name
-        Assert.assertThrows(NullPointerException.class, () -> Author.isValidAuthor(null));
-
-        // invalid name
-        assertFalse(Author.isValidAuthor("")); // empty string
-        assertFalse(Author.isValidAuthor(" ")); // spaces only
-        assertFalse(Author.isValidAuthor("^")); // only non-alphanumeric characters
-        assertFalse(Author.isValidAuthor("peter*")); // contains non-alphanumeric characters
-
-        // valid name
-        assertTrue(Author.isValidAuthor("peter jack")); // alphabets only
-        assertTrue(Author.isValidAuthor("12345")); // numbers only
-        assertTrue(Author.isValidAuthor("peter the 2nd")); // alphanumeric characters
-        assertTrue(Author.isValidAuthor("Capital Tan")); // with capital letters
-        assertTrue(Author.isValidAuthor("David Roger Jackson Ray Jr 2nd")); // long names
-    }
-}
-```
-###### \java\seedu\address\model\book\AvailTest.java
-``` java
-    @Test
-    public void isValidAvail() {
-        // null avail
-        Assert.assertThrows(NullPointerException.class, () -> Avail.isValidAvail(null));
-
-        // blank avail
-        assertFalse(Avail.isValidAvail("")); // empty string
-        assertFalse(Avail.isValidAvail(" ")); // spaces only
-
-        // valid avail
-        assertTrue(Avail.isValidAvail("Reserved"));  // Reserved
-        assertTrue(Avail.isValidAvail("Borrowed"));  // Borrowed
-        assertTrue(Avail.isValidAvail("Available"));  // Available
-    }
-}
-```
-###### \java\seedu\address\model\book\IsbnTest.java
-``` java
-    @Test
-    public void isValidIsbn() {
-        // null isbn
-        Assert.assertThrows(NullPointerException.class, () -> Isbn.isValidIsbn(null));
-
-        // invalid isbn numbers
-        assertFalse(Isbn.isValidIsbn("")); // empty string
-        assertFalse(Isbn.isValidIsbn(" ")); // spaces only
-        assertFalse(Isbn.isValidIsbn("91")); // less than 13 numbers
-        assertFalse(Isbn.isValidIsbn("phone")); // non-numeric
-        assertFalse(Isbn.isValidIsbn("978073669242a")); // alphabets within digits
-        assertFalse(Isbn.isValidIsbn("9780736 692427")); // spaces within digits
-        assertFalse(Isbn.isValidIsbn("97807366924271")); // more than 13 numbers
-
-        // valid isbn numbers
-        assertTrue(Isbn.isValidIsbn("9780736692427")); // 13 isbn numbers
-    }
-}
-```
-###### \java\seedu\address\model\book\TitleContainsKeywordsPredicateTest.java
-``` java
-    @Test
-    public void test_nameContainsKeywords_returnsTrue() {
-        // One keyword
-        TitleContainsKeywordsPredicate predicate;
-        predicate = new TitleContainsKeywordsPredicate(Collections.singletonList("Animal"));
-        assertTrue(predicate.test(new BookBuilder().withTitle("Animal Breaking").build()));
-
-        // Multiple keywords
-        predicate = new TitleContainsKeywordsPredicate(Arrays.asList("Animal", "Breaking"));
-        assertTrue(predicate.test(new BookBuilder().withTitle("Animal Breaking").build()));
-
-        // Only one matching keyword
-        predicate = new TitleContainsKeywordsPredicate(Arrays.asList("Breaking", "Carol"));
-        assertTrue(predicate.test(new BookBuilder().withTitle("Animal Carol").build()));
-
-        // Mixed-case keywords
-        predicate = new TitleContainsKeywordsPredicate(Arrays.asList("aNimal", "bREAKING"));
-        assertTrue(predicate.test(new BookBuilder().withTitle("Animal Breaking").build()));
-    }
-
-    @Test
-    public void test_nameDoesNotContainKeywords_returnsFalse() {
-        // Zero keywords
-        TitleContainsKeywordsPredicate predicate = new TitleContainsKeywordsPredicate(Collections.emptyList());
-        assertFalse(predicate.test(new BookBuilder().withTitle("Animal").build()));
-
-        // Non-matching keyword
-        predicate = new TitleContainsKeywordsPredicate(Arrays.asList("Carol"));
-        assertFalse(predicate.test(new BookBuilder().withTitle("Animal Breaking").build()));
-
-        // Keywords match isbn, avail and address, but does not match name
-        predicate = new TitleContainsKeywordsPredicate(Arrays.asList("9780736692427", "Borrowed", "Main", "Street"));
-        assertFalse(predicate.test(new BookBuilder().withTitle("Animal").withIsbn("9780736692427")
-            .withAvail("Borrowed").withAuthor("Main Street").build()));
-    }
-}
-```
-###### \java\seedu\address\model\book\TitleTest.java
-``` java
-    @Test
-    public void isValidTitle() {
-        // null name
-        Assert.assertThrows(NullPointerException.class, () -> Title.isValidTitle(null));
-
-        // invalid name
-        assertFalse(Title.isValidTitle("")); // empty string
-        assertFalse(Title.isValidTitle(" ")); // spaces only
-        assertFalse(Title.isValidTitle("^")); // only non-alphanumeric characters
-        assertFalse(Title.isValidTitle("peter*")); // contains non-alphanumeric characters
-
-        // valid name
-        assertTrue(Title.isValidTitle("peter jack")); // alphabets only
-        assertTrue(Title.isValidTitle("12345")); // numbers only
-        assertTrue(Title.isValidTitle("peter the 2nd")); // alphanumeric characters
-        assertTrue(Title.isValidTitle("Capital Tan")); // with capital letters
-        assertTrue(Title.isValidTitle("David Roger Jackson Ray Jr 2nd")); // long names
-    }
-}
-```
-###### \java\seedu\address\testutil\TypicalBooks.java
-``` java
-    public static final Book ANIMAL = new BookBuilder().withTitle("Animal Farm")
-        .withAuthor("George Orwell")
-        .withAvail("Available")
-        .withIsbn("9780736692427")
-        .withTags("political", "satire").build();
-    public static final Book BREAKING = new BookBuilder().withTitle("Breaking Dawn")
-        .withAuthor("Stephenie Meyer")
-        .withAvail("Available")
-        .withIsbn("9780316067928")
-        .withTags("fiction").build();
-    public static final Book CALIFORNIA = new BookBuilder().withTitle("California Girl")
-        .withAuthor("Jefferson Parker")
-        .withIsbn("9780060562373")
-        .withAvail("Borrowed")
-        .withTags("unlabelled").build();
-    public static final Book DELIRIUM = new BookBuilder().withTitle("Delirium")
-        .withAuthor("Lauren Oliver")
-        .withIsbn("9780061726835")
-        .withAvail("Borrowed").build();
-    public static final Book EMMA = new BookBuilder().withTitle("Emma")
-        .withAuthor("Jane Austen")
-        .withIsbn("9780141439587")
-        .withAvail("Borrowed").build();
-    public static final Book FATEFUL = new BookBuilder().withTitle("Fateful")
-        .withAuthor("Claudia Gray")
-        .withIsbn("9780062006202")
-        .withAvail("Available").build();
-    public static final Book GONE = new BookBuilder().withTitle("Gone Girl")
-        .withAuthor("Gillian Flynn")
-        .withIsbn("9780753827666")
-        .withAvail("Available").build();
-
-    // Manually added
-    public static final Book HOLES = new BookBuilder().withTitle("Holes")
-        .withAuthor("Louis Sachar")
-        .withIsbn("9780439244190")
-        .withAvail("Available").build();
-    public static final Book INVISIBLE = new BookBuilder().withTitle("Invisible Man")
-        .withAuthor("Ralph Ellison")
-        .withIsbn("9780140023350")
-        .withAvail("Available").build();
-
-    // Manually added - Book's details found in {@code CommandTestUtil}
-    public static final Book XVI = new BookBuilder().withTitle(VALID_TITLE_XVI)
-        .withAuthor(VALID_AUTHOR_XVI)
-        .withIsbn(VALID_ISBN_XVI)
-        .withAvail(VALID_AVAIL_XVI)
-        .withTags(VALID_TAG_DYSTOPIA).build();
-    public static final Book YOU = new BookBuilder().withTitle(VALID_TITLE_YOU)
-        .withAuthor(VALID_AUTHOR_YOU)
-        .withIsbn(VALID_ISBN_YOU)
-        .withAvail(VALID_AVAIL_YOU)
-        .withTags(VALID_TAG_FICTION)
-        .build();
-
-    public static final String KEYWORD_MATCHING_GIRL = "Girl"; // A keyword that matches GIRL
-    public static final String KEYWORD_MATCHING_BREAKING = "Breaking"; // A keyword that matches BREAKING
-
-```
-###### \java\systemtests\AddCommandSystemTest.java
+###### /java/systemtests/AddCommandSystemTest.java
 ``` java
         /* ------------------------ Perform add operations on the shown unfiltered list ----------------------------- */
 
@@ -529,7 +161,7 @@
 
     }
 ```
-###### \java\systemtests\DeleteCommandSystemTest.java
+###### /java/systemtests/DeleteCommandSystemTest.java
 ``` java
         /* Case: filtered book list, delete index within bounds of catalogue and book list -> deleted */
         showBooksWithTitle(KEYWORD_MATCHING_BREAKING);
@@ -545,7 +177,142 @@
         command = DeleteCommand.COMMAND_WORD + " " + invalidIndex;
         assertCommandFailure(command, MESSAGE_INVALID_BOOK_DISPLAYED_INDEX);
 ```
-###### \java\systemtests\EditCommandSystemTest.java
+###### /java/systemtests/FindCommandSystemTest.java
+``` java
+        /* Case: find multiple books in catalogue, command with leading spaces and trailing spaces
+         * -> 2 books found
+         */
+        String command = "   " + FindCommand.COMMAND_WORD + " " + KEYWORD_MATCHING_GIRL + "   ";
+        Model expectedModel = getModel();
+        ModelHelper.setFilteredList(expectedModel, CALIFORNIA, GONE); // Two titles contains "Girl"
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: repeat previous find command where book list is displaying the books we are finding
+         * -> 2 books found
+         */
+        command = FindCommand.COMMAND_WORD + " " + KEYWORD_MATCHING_GIRL;
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: find book where book list is not displaying the book we are finding -> 1 book found */
+        command = FindCommand.COMMAND_WORD + " California";
+        ModelHelper.setFilteredList(expectedModel, CALIFORNIA);
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: find multiple books in catalogue, 2 keywords -> 2 books found */
+        command = FindCommand.COMMAND_WORD + " California Gone";
+        ModelHelper.setFilteredList(expectedModel, CALIFORNIA, GONE);
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: find multiple books in catalogue, 2 keywords in reversed order -> 2 books found */
+        command = FindCommand.COMMAND_WORD + " Gone California";
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: find multiple books in catalogue, 2 keywords with 1 repeat -> 2 books found */
+        command = FindCommand.COMMAND_WORD + " Gone California Gone";
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: find multiple books in catalogue, 2 matching keywords and 1 non-matching keyword
+         * -> 2 books found
+         */
+        command = FindCommand.COMMAND_WORD + " Gone California NonMatchingKeyWord";
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+```
+###### /java/systemtests/FindCommandSystemTest.java
+``` java
+        /* Case: find same books in catalogue after deleting 1 of them -> 1 book found */
+        executeCommand(DeleteCommand.COMMAND_WORD + " 1");
+        assertFalse(getModel().getCatalogue().getBookList().contains(CALIFORNIA));
+        command = FindCommand.COMMAND_WORD + " " + KEYWORD_MATCHING_GIRL;
+        expectedModel = getModel();
+        ModelHelper.setFilteredList(expectedModel, GONE);
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: find book in catalogue, keyword is same as name but of different case -> 1 book found */
+        command = FindCommand.COMMAND_WORD + " GoNe GiRl";
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: find book in catalogue, keyword is substring of name -> 0 books found */
+        command = FindCommand.COMMAND_WORD + " Gon";
+        ModelHelper.setFilteredList(expectedModel);
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: find book in catalogue, name is substring of keyword -> 0 books found */
+        command = FindCommand.COMMAND_WORD + " Oliver";
+        ModelHelper.setFilteredList(expectedModel);
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: find book not in catalogue -> 0 books found */
+        command = FindCommand.COMMAND_WORD + " Mark";
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: find book in catalogue, keyword is substring of author -> 0 books found */
+        command = FindCommand.COMMAND_WORD + " Lau";
+        ModelHelper.setFilteredList(expectedModel);
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: find book in catalogue, author is substring of keyword -> 0 books found */
+        command = FindCommand.COMMAND_WORD + " Lauren";
+        ModelHelper.setFilteredList(expectedModel);
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: find book not in catalogue, author not in catalogue -> 0 books found */
+        command = FindCommand.COMMAND_WORD + " Mark";
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: find isbn number of book in catalogue -> 0 books found */
+        command = FindCommand.COMMAND_WORD + " " + DELIRIUM.getIsbn().value;
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: find availability of book in catalogue -> 0 books found */
+        command = FindCommand.COMMAND_WORD + " " + DELIRIUM.getAvail().value;
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: find tags of book in catalogue -> 0 books found */
+        List<Tag> tags = new ArrayList<>(DELIRIUM.getTags());
+        command = FindCommand.COMMAND_WORD + " " + tags.get(0).tagName;
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: find while a book is selected -> selected card deselected */
+        showAllBooks();
+        selectBook(Index.fromOneBased(1));
+        assertFalse(getBookListPanel().getHandleToSelectedCard().getTitle().equals(DELIRIUM.getTitle().fullTitle));
+        command = FindCommand.COMMAND_WORD + " Delirium";
+        ModelHelper.setFilteredList(expectedModel, DELIRIUM);
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardDeselected();
+
+        /* Case: find book in empty catalogue -> 0 books found */
+        deleteAllBooks();
+        command = FindCommand.COMMAND_WORD + " " + KEYWORD_MATCHING_GIRL;
+        expectedModel = getModel();
+        ModelHelper.setFilteredList(expectedModel, DELIRIUM);
+        assertCommandSuccess(command, expectedModel);
+        assertSelectedCardUnchanged();
+
+        /* Case: mixed case command word -> rejected */
+        command = "FiNd Delirium";
+        assertCommandFailure(command, MESSAGE_UNKNOWN_COMMAND);
+    }
+```
+###### /java/systemtests/EditCommandSystemTest.java
 ``` java
         /* ----------------- Performing edit operation while an unfiltered list is being shown ---------------------- */
 
@@ -678,138 +445,186 @@
             + AVAIL_DESC_YOU + AUTHOR_DESC_YOU + TAG_DESC_FICTION;
         assertCommandFailure(command, EditCommand.MESSAGE_DUPLICATE_BOOK);
 ```
-###### \java\systemtests\FindCommandSystemTest.java
+###### /java/seedu/address/model/book/AvailTest.java
 ``` java
-        /* Case: find multiple books in catalogue, command with leading spaces and trailing spaces
-         * -> 2 books found
-         */
-        String command = "   " + FindCommand.COMMAND_WORD + " " + KEYWORD_MATCHING_GIRL + "   ";
-        Model expectedModel = getModel();
-        ModelHelper.setFilteredList(expectedModel, CALIFORNIA, GONE); // Two titles contains "Girl"
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
+    @Test
+    public void isValidAvail() {
+        // null avail
+        Assert.assertThrows(NullPointerException.class, () -> Avail.isValidAvail(null));
 
-        /* Case: repeat previous find command where book list is displaying the books we are finding
-         * -> 2 books found
-         */
-        command = FindCommand.COMMAND_WORD + " " + KEYWORD_MATCHING_GIRL;
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
+        // blank avail
+        assertFalse(Avail.isValidAvail("")); // empty string
+        assertFalse(Avail.isValidAvail(" ")); // spaces only
 
-        /* Case: find book where book list is not displaying the book we are finding -> 1 book found */
-        command = FindCommand.COMMAND_WORD + " California";
-        ModelHelper.setFilteredList(expectedModel, CALIFORNIA);
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find multiple books in catalogue, 2 keywords -> 2 books found */
-        command = FindCommand.COMMAND_WORD + " California Gone";
-        ModelHelper.setFilteredList(expectedModel, CALIFORNIA, GONE);
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find multiple books in catalogue, 2 keywords in reversed order -> 2 books found */
-        command = FindCommand.COMMAND_WORD + " Gone California";
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find multiple books in catalogue, 2 keywords with 1 repeat -> 2 books found */
-        command = FindCommand.COMMAND_WORD + " Gone California Gone";
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find multiple books in catalogue, 2 matching keywords and 1 non-matching keyword
-         * -> 2 books found
-         */
-        command = FindCommand.COMMAND_WORD + " Gone California NonMatchingKeyWord";
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-```
-###### \java\systemtests\FindCommandSystemTest.java
-``` java
-        /* Case: find same books in catalogue after deleting 1 of them -> 1 book found */
-        executeCommand(DeleteCommand.COMMAND_WORD + " 1");
-        assertFalse(getModel().getCatalogue().getBookList().contains(CALIFORNIA));
-        command = FindCommand.COMMAND_WORD + " " + KEYWORD_MATCHING_GIRL;
-        expectedModel = getModel();
-        ModelHelper.setFilteredList(expectedModel, GONE);
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find book in catalogue, keyword is same as name but of different case -> 1 book found */
-        command = FindCommand.COMMAND_WORD + " GoNe GiRl";
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find book in catalogue, keyword is substring of name -> 0 books found */
-        command = FindCommand.COMMAND_WORD + " Gon";
-        ModelHelper.setFilteredList(expectedModel);
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find book in catalogue, name is substring of keyword -> 0 books found */
-        command = FindCommand.COMMAND_WORD + " Oliver";
-        ModelHelper.setFilteredList(expectedModel);
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find book not in catalogue -> 0 books found */
-        command = FindCommand.COMMAND_WORD + " Mark";
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find book in catalogue, keyword is substring of author -> 0 books found */
-        command = FindCommand.COMMAND_WORD + " Lau";
-        ModelHelper.setFilteredList(expectedModel);
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find book in catalogue, author is substring of keyword -> 0 books found */
-        command = FindCommand.COMMAND_WORD + " Lauren";
-        ModelHelper.setFilteredList(expectedModel);
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find book not in catalogue, author not in catalogue -> 0 books found */
-        command = FindCommand.COMMAND_WORD + " Mark";
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find isbn number of book in catalogue -> 0 books found */
-        command = FindCommand.COMMAND_WORD + " " + DELIRIUM.getIsbn().value;
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find availability of book in catalogue -> 0 books found */
-        command = FindCommand.COMMAND_WORD + " " + DELIRIUM.getAvail().value;
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find tags of book in catalogue -> 0 books found */
-        List<Tag> tags = new ArrayList<>(DELIRIUM.getTags());
-        command = FindCommand.COMMAND_WORD + " " + tags.get(0).tagName;
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find while a book is selected -> selected card deselected */
-        showAllBooks();
-        selectBook(Index.fromOneBased(1));
-        assertFalse(getBookListPanel().getHandleToSelectedCard().getTitle().equals(DELIRIUM.getTitle().fullTitle));
-        command = FindCommand.COMMAND_WORD + " Delirium";
-        ModelHelper.setFilteredList(expectedModel, DELIRIUM);
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardDeselected();
-
-        /* Case: find book in empty catalogue -> 0 books found */
-        deleteAllBooks();
-        command = FindCommand.COMMAND_WORD + " " + KEYWORD_MATCHING_GIRL;
-        expectedModel = getModel();
-        ModelHelper.setFilteredList(expectedModel, DELIRIUM);
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: mixed case command word -> rejected */
-        command = "FiNd Delirium";
-        assertCommandFailure(command, MESSAGE_UNKNOWN_COMMAND);
+        // valid avail
+        assertTrue(Avail.isValidAvail("Reserved"));  // Reserved
+        assertTrue(Avail.isValidAvail("Borrowed"));  // Borrowed
+        assertTrue(Avail.isValidAvail("Available"));  // Available
     }
+}
+```
+###### /java/seedu/address/model/book/AuthorTest.java
+``` java
+    @Test
+    public void isValidAuthor() {
+        // null name
+        Assert.assertThrows(NullPointerException.class, () -> Author.isValidAuthor(null));
+
+        // invalid name
+        assertFalse(Author.isValidAuthor("")); // empty string
+        assertFalse(Author.isValidAuthor(" ")); // spaces only
+        assertFalse(Author.isValidAuthor("^")); // only non-alphanumeric characters
+        assertFalse(Author.isValidAuthor("peter*")); // contains non-alphanumeric characters
+
+        // valid name
+        assertTrue(Author.isValidAuthor("peter jack")); // alphabets only
+        assertTrue(Author.isValidAuthor("12345")); // numbers only
+        assertTrue(Author.isValidAuthor("peter the 2nd")); // alphanumeric characters
+        assertTrue(Author.isValidAuthor("Capital Tan")); // with capital letters
+        assertTrue(Author.isValidAuthor("David Roger Jackson Ray Jr 2nd")); // long names
+    }
+}
+```
+###### /java/seedu/address/model/book/TitleContainsKeywordsPredicateTest.java
+``` java
+    @Test
+    public void test_nameContainsKeywords_returnsTrue() {
+        // One keyword
+        TitleContainsKeywordsPredicate predicate;
+        predicate = new TitleContainsKeywordsPredicate(Collections.singletonList("Animal"));
+        assertTrue(predicate.test(new BookBuilder().withTitle("Animal Breaking").build()));
+
+        // Multiple keywords
+        predicate = new TitleContainsKeywordsPredicate(Arrays.asList("Animal", "Breaking"));
+        assertTrue(predicate.test(new BookBuilder().withTitle("Animal Breaking").build()));
+
+        // Only one matching keyword
+        predicate = new TitleContainsKeywordsPredicate(Arrays.asList("Breaking", "Carol"));
+        assertTrue(predicate.test(new BookBuilder().withTitle("Animal Carol").build()));
+
+        // Mixed-case keywords
+        predicate = new TitleContainsKeywordsPredicate(Arrays.asList("aNimal", "bREAKING"));
+        assertTrue(predicate.test(new BookBuilder().withTitle("Animal Breaking").build()));
+    }
+
+    @Test
+    public void test_nameDoesNotContainKeywords_returnsFalse() {
+        // Zero keywords
+        TitleContainsKeywordsPredicate predicate = new TitleContainsKeywordsPredicate(Collections.emptyList());
+        assertFalse(predicate.test(new BookBuilder().withTitle("Animal").build()));
+
+        // Non-matching keyword
+        predicate = new TitleContainsKeywordsPredicate(Arrays.asList("Carol"));
+        assertFalse(predicate.test(new BookBuilder().withTitle("Animal Breaking").build()));
+
+        // Keywords match isbn, avail and address, but does not match name
+        predicate = new TitleContainsKeywordsPredicate(Arrays.asList("9780736692427", "Borrowed", "Main", "Street"));
+        assertFalse(predicate.test(new BookBuilder().withTitle("Animal").withIsbn("9780736692427")
+            .withAvail("Borrowed").withAuthor("Main Street").build()));
+    }
+}
+```
+###### /java/seedu/address/model/book/IsbnTest.java
+``` java
+    @Test
+    public void isValidIsbn() {
+        // null isbn
+        Assert.assertThrows(NullPointerException.class, () -> Isbn.isValidIsbn(null));
+
+        // invalid isbn numbers
+        assertFalse(Isbn.isValidIsbn("")); // empty string
+        assertFalse(Isbn.isValidIsbn(" ")); // spaces only
+        assertFalse(Isbn.isValidIsbn("91")); // less than 13 numbers
+        assertFalse(Isbn.isValidIsbn("phone")); // non-numeric
+        assertFalse(Isbn.isValidIsbn("978073669242a")); // alphabets within digits
+        assertFalse(Isbn.isValidIsbn("9780736 692427")); // spaces within digits
+        assertFalse(Isbn.isValidIsbn("97807366924271")); // more than 13 numbers
+
+        // valid isbn numbers
+        assertTrue(Isbn.isValidIsbn("9780736692427")); // 13 isbn numbers
+    }
+}
+```
+###### /java/seedu/address/model/book/TitleTest.java
+``` java
+    @Test
+    public void isValidTitle() {
+        // null name
+        Assert.assertThrows(NullPointerException.class, () -> Title.isValidTitle(null));
+
+        // invalid name
+        assertFalse(Title.isValidTitle("")); // empty string
+        assertFalse(Title.isValidTitle(" ")); // spaces only
+        assertFalse(Title.isValidTitle("^")); // only non-alphanumeric characters
+        assertFalse(Title.isValidTitle("peter*")); // contains non-alphanumeric characters
+
+        // valid name
+        assertTrue(Title.isValidTitle("peter jack")); // alphabets only
+        assertTrue(Title.isValidTitle("12345")); // numbers only
+        assertTrue(Title.isValidTitle("peter the 2nd")); // alphanumeric characters
+        assertTrue(Title.isValidTitle("Capital Tan")); // with capital letters
+        assertTrue(Title.isValidTitle("David Roger Jackson Ray Jr 2nd")); // long names
+    }
+}
+```
+###### /java/seedu/address/testutil/TypicalBooks.java
+``` java
+    public static final Book ANIMAL = new BookBuilder().withTitle("Animal Farm")
+        .withAuthor("George Orwell")
+        .withAvail("Available")
+        .withIsbn("9780736692427")
+        .withTags("political", "satire").build();
+    public static final Book BREAKING = new BookBuilder().withTitle("Breaking Dawn")
+        .withAuthor("Stephenie Meyer")
+        .withAvail("Available")
+        .withIsbn("9780316067928")
+        .withTags("fiction").build();
+    public static final Book CALIFORNIA = new BookBuilder().withTitle("California Girl")
+        .withAuthor("Jefferson Parker")
+        .withIsbn("9780060562373")
+        .withAvail("Borrowed")
+        .withTags("unlabelled").build();
+    public static final Book DELIRIUM = new BookBuilder().withTitle("Delirium")
+        .withAuthor("Lauren Oliver")
+        .withIsbn("9780061726835")
+        .withAvail("Borrowed").build();
+    public static final Book EMMA = new BookBuilder().withTitle("Emma")
+        .withAuthor("Jane Austen")
+        .withIsbn("9780141439587")
+        .withAvail("Borrowed").build();
+    public static final Book FATEFUL = new BookBuilder().withTitle("Fateful")
+        .withAuthor("Claudia Gray")
+        .withIsbn("9780062006202")
+        .withAvail("Available").build();
+    public static final Book GONE = new BookBuilder().withTitle("Gone Girl")
+        .withAuthor("Gillian Flynn")
+        .withIsbn("9780753827666")
+        .withAvail("Available").build();
+
+    // Manually added
+    public static final Book HOLES = new BookBuilder().withTitle("Holes")
+        .withAuthor("Louis Sachar")
+        .withIsbn("9780439244190")
+        .withAvail("Available").build();
+    public static final Book INVISIBLE = new BookBuilder().withTitle("Invisible Man")
+        .withAuthor("Ralph Ellison")
+        .withIsbn("9780140023350")
+        .withAvail("Available").build();
+
+    // Manually added - Book's details found in {@code CommandTestUtil}
+    public static final Book XVI = new BookBuilder().withTitle(VALID_TITLE_XVI)
+        .withAuthor(VALID_AUTHOR_XVI)
+        .withIsbn(VALID_ISBN_XVI)
+        .withAvail(VALID_AVAIL_XVI)
+        .withTags(VALID_TAG_DYSTOPIA).build();
+    public static final Book YOU = new BookBuilder().withTitle(VALID_TITLE_YOU)
+        .withAuthor(VALID_AUTHOR_YOU)
+        .withIsbn(VALID_ISBN_YOU)
+        .withAvail(VALID_AVAIL_YOU)
+        .withTags(VALID_TAG_FICTION)
+        .build();
+
+    public static final String KEYWORD_MATCHING_GIRL = "Girl"; // A keyword that matches GIRL
+    public static final String KEYWORD_MATCHING_BREAKING = "Breaking"; // A keyword that matches BREAKING
+
 ```
