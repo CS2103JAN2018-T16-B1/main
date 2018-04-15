@@ -205,7 +205,7 @@ image::DeleteBookSdForLogic.png[width="800"]
 .Structure of the Model Component
 image::ModelClassDiagram.png[width="800"]
 
-*API* : link:{repoURL}/src/main/java/seedu/address/model/Model.java[`Model.java`]
+*API* : link:{repoURL}/blob/master/src/main/java/seedu/address/model/Model.java[`Model.java`]
 
 The `Model`,
 
@@ -218,10 +218,12 @@ The `Model`,
 * does not depend on any of the other three components.
 
 [[Design-Storage]]
+// tag::storagepic[]
 === Storage component
 
 .Structure of the Storage Component
 image::StorageClassDiagram.png[width="800"]
+// end::storagepic[]
 
 *API* : link:{repoURL}/src/main/java/seedu/address/storage/Storage.java[`Storage.java`]
 
@@ -500,7 +502,7 @@ When a pull request has changes to asciidoc files, you can use https://www.netli
 
 Here are the steps to create a new release.
 
-.  Update the version number in link:{repoURL}/src/main/java/seedu/address/MainApp.java[`MainApp.java`].
+.  Update the version number in link:{repoURL}/blob/master/src/main/java/seedu/address/MainApp.java[`MainApp.java`].
 .  Generate a JAR file <<UsingGradle#creating-the-jar-file, using Gradle>>.
 .  Tag the repo with the version number. e.g. `v0.1`
 .  https://help.github.com/articles/creating-releases/[Create a new release using GitHub] and upload the JAR file you created.
@@ -908,6 +910,71 @@ Use case ends.
 +
 Use case resumes at step 2.
 
+// tag::usecaseloginoutlistfind[]
+[discrete]
+=== Use case: Login/Logout
+
+*MSS*
+
+1.  User logs in with credentials
+2.  Catalogue authenticates with the credentials entered
+3.  Catalogue shows successful login message
+4.  User issues commands with privilege
+5.  Catalogue checks the privilege of the user against the command issued
+6.  Catalogue executes the command
+Use case ends.
++
+Step 4-6 are repeated until the user finishes using the application
+
+7.  User issues logout command
+8.  Catalogue change the current account to guest
+
+*Extensions*
+
+[none]
+* 2a. The credentials entered does not match any record in the AccountList
++
+[none]
+** 2a1. Catalogue shows an error message.
++
+Use case resumes at step 1.
+
+* 4a. The privilege level of the account logged in is lower than the required level of the command
++
+[none]
+** 4a1. Catalogue shows an error message.
++
+Use case resumes at step 4 or step 7.
+
+[discrete]
+=== Use case: List
+
+
+*MSS*
+
+1.  User requests to list all books
+2.  Catalogue shows a list of all books in the book list
++
+Use case ends.
+
+[discrete]
+=== Use case: Find
+
+*MSS*
+
+1.  User requests to find books with some keywords
+2.  Catalogue shows a list of books with at least one keyword in the title
++
+Use case ends.
+
+*Extensions*
+
+[none]
+* 2a. The list is empty
++
+Use case ends.
+// end::usecaseloginoutlistfind[]
+
 [discrete]
 == Use case: Borrow book
 
@@ -956,6 +1023,7 @@ Catalogue shows an error message.
 +
 Use case resumes at step 2.
 
+
 [discrete]
 == Use case: Reserve book
 
@@ -965,6 +1033,10 @@ Use case resumes at step 2.
 2. User requests to list books
 3. User requests to reserve a specific book in the list
 4. List will book with 'Reserved' availability
+=======
+* 2a. The list is empty
++
+Use case ends.
 
 *Extensions*
 
@@ -979,6 +1051,7 @@ Catalogue shows an error message.
 ** 3a1. Catalogue shows an error message.
 +
 Use case resumes at step 2.
+
 
 [appendix]
 == Non Functional Requirements
@@ -1039,13 +1112,62 @@ These instructions only provide a starting point for testers to work on; testers
 
 _{ more test cases ... }_
 
+// tag::manualtestloginoutlistfind[]
+=== Login
+
+.  Initial login
+
+.. Prerequisites: The account-password combination `wrong acount` is not in the AccountList
+.. Test case: `login admin admin` +
+   Expected: The user is logged in as an librarian. The user will be privileged to execute any command.
+.. Test case: `login wrong account` +
+   Expected: An error message will be shown. The user is not logged in.
+
+=== Logout
+
+.  Logout after logged in
+.. Prerequisites: The current account logged in is a student or a librarian
+.. Test case: `logout` +
+   Expected: The user is logged out. The current account will become guest account.
+
+.  Logout without logging in
+
+.. Prerequisites: The current account logged in is a guest
+.. Test case: `logout` +
+   Expected: An error message will be shown. The user will stay as a guest.
+
+=== List
+
+.   List all books
+..  Prerequisites: There is at least one book in the book list.
+..  Test case: `list` +
+    Expected: A list of all books will be shown.
+
+.   List all books when the book list is empty
+..  Prerequisites: There is no book in the book list.
+..  Test case: `list` +
+    Expected: An empty list will be shown.
+
+=== Find
+
+.   Find books with the keyword in title
+..  Prerequisites: The book list contains default sample data.
+..  Test case: `find animal` +
+    Expected: The book 'Animal Farm' will be shown.
+..  Test case: `find animal girl` +
+    Expected: The book 'Animal Farm' and 'California Girl' will be shown.
+..  Test case: `find catalog` +
+    Expected: An empty list will be shown.
+// end::manualtestloginoutlistfind[]
+
+
 === Deleting a book
 
 . Deleting a book while all books are listed
 
 .. Prerequisites: List all books using the `list` command. Multiple books in the list.
 .. Test case: `delete 1` +
-   Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+   Expected: First book is deleted from the list. Details of the deleted book shown in the status message. Timestamp in the status bar is updated.
 .. Test case: `delete 0` +
    Expected: No book is deleted. Error details shown in the status message. Status bar remains the same.
 .. Other incorrect delete commands to try: `delete`, `delete x` (where x is larger than the list size) _{give more}_ +

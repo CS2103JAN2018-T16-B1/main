@@ -6,11 +6,11 @@ https://coveralls.io/github/CS2103JAN2018-T16-B1/main?branch=master[image:https:
 
 
 ifdef::env-github[]
-image::docs/images/Ui.png[width="600"]
+image::docs/images/Ui_Catalogue.png[width="600"]
 endif::[]
 
 ifndef::env-github[]
-image::images/Ui.png[width="600"]
+image::images/Ui_Catalogue.png[width="600"]
 endif::[]
 
 * This is a desktop Catalogue application. It has a GUI but most of the user interactions happen using a CLI (Command Line Interface).

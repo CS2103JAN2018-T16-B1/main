@@ -37,7 +37,7 @@
 |_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users._
 |===
 
-include::../UserGuide.adoc[tag=account]
+include::../UserGuide.adoc[tag=defaultaccount]
 
 include::../UserGuide.adoc[tag=loginout]
 
@@ -47,6 +47,9 @@ include::../UserGuide.adoc[tag=loginout]
 |_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._
 |===
 
-include::../DeveloperGuide.adoc[tag=loginout]
+include::../DeveloperGuide.adoc[tag=storagepic]
+include::../DeveloperGuide.adoc[tag=usecaseloginoutlistfind]
+include::../DeveloperGuide.adoc[tag=manualtestloginoutlistfind]
+
 
 

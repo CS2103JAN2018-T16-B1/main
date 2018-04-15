@@ -15,12 +15,14 @@ endif::[]
 
 By: `Team CS2103JAN2018-T16-B1`      Since: `Jan 2018`      Licence: `MIT`
 
+// tag::defaultaccount[]
 == Default Account
 ```
 Username: admin
 Password: admin
 ```
 You can login the default account with this command: 'login admin admin'
+// end::defaultaccount[]
 
 == Introduction
 
@@ -46,7 +48,7 @@ This app will not work with earlier versions of Java 8.
 .  Copy the file to the folder you want to use as the home folder for your Catalogue.
 .  Double-click the file to start the app. The GUI should appear in a few seconds.
 +
-image::UI_final.png[width="790"]
+image::UserInterfaceFinal.png[width="790"]
 +
 1 - Command box: type the commands in this section +
 2 - Result Display: Show the result of what you typed above +
@@ -59,7 +61,7 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 .  Some example commands you can try:
 
 * *`list`* : lists all books
-* **`add`**`t/Animal Farm a/George Orwell i/9780736692427 av/Borrowed and Reserved ` : adds a book titled `Animal Farm` to the Catalogue.
+* **`add`**`t/Animal Farm a/George Orwell i/9780736692427 av/Borrowed` : adds a book titled `Animal Farm` to the Catalogue.
 * **`delete`**`3` : deletes the 3rd book shown in the current list
 * *`exit`* : exits the app
 
@@ -76,7 +78,7 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 * Items with `…`​ after them can be used multiple times including zero times e.g. `[tag/TAG]...` can be used as `{nbsp}` (i.e. 0 times), `tag/satire`, `tag/satire tag/political` etc.
 * Parameters can be in any order e.g. if the command specifies `t/TITLE i/ISBN`, `i/ISBN t/TITLE` is also acceptable.
 ====
-
+// tag::loginout[]
 === Login as Student/Librarian : `Login`
 
 Format: `login [username] [password]` +
@@ -86,10 +88,10 @@ Default account: +
 Username: admin +
 Password: admin
 
-Login with different accounts:
+Login with different accounts: +
 1 - Add account using adda command +
 2 – Use the username and password that you entered for the above account +
-e.g. adda n/Victor Tardieu m/ A1234567N u/e12345 p/secretpassword l/1
+e.g. adda n/Victor Tardieu m/A1234567N u/victor123 p/victor123 l/1
 
 [NOTE]
 Different accounts might have different privilege levels. A command can only be executed when the privilege level of the current user is greater or equal to the command's required level. The default admin account can be logged in with 'login admin admin'
@@ -103,7 +105,7 @@ From 1(Student) you are going back to 0(Guest) +
 
 [NOTE]
 Remember that when one logs out from your account, some commands (such as add a book for a librarian) won’t be available anymore. To be able to do them again, one will have to login again with his unique credentials.
-
+// end::loginout[]
 
 === Viewing help : `help`
 
@@ -121,8 +123,8 @@ A book can have any number of tags (including 0)
 
 Examples:
 
-* `add t/Animal Farm a/George Orwell i/9780736692427 av/Borrowed and Reserved`
-* `add t/Breaking Dawn tag/fiction av/Borrowed and Reserved a/Stephenie Meyer i/9780316067928 tag/young adults`
+* `add t/Animal Farm a/George Orwell i/9780736692427 av/Borrowed`
+* `add t/Breaking Dawn tag/fiction av/Reserved a/Stephenie Meyer i/9780316067928 tag/young adults`
 
 [TIP]
 Press TAB after writing `add` to use the auto-complete function.
@@ -155,9 +157,9 @@ Privilege Level: 2(Librarian)
 
 Examples:
 
-* `edit 1 i/9780736692426 av/Borrowed and Reserved` +
+* `edit 1 i/9780736692426 av/Borrowed` +
 Edits the isbn number and availability author of the 1st book to be `9780736692426` and `Available` respectively.
-* `edit 2 n/Breaking Dawn t/` +
+* `edit 2 t/Breaking Dawn tag/` +
 Edits the title of the 2nd book to be `Breaking Dawn` and clears all existing tags.
 
 TIP]
@@ -244,7 +246,7 @@ Press TAB after writing `select` to use the auto-complete function.
 
 Examples:
 
-* `select` --> (press TAB) --> `select t/ a/ i/ av/ tag/
+* `select` --> (press TAB) --> `select 1
 
 === Listing entered commands : `history`
 
@@ -334,11 +336,19 @@ Examples:
 `borrow 2` +
 Borrow the 2nd book in the catalogue.
 
+[TIP]
+Press TAB after writing `borrow` to use the auto-complete function.
+
+Examples:
+
+* `borrow` --> (press TAB) --> `borrow 1 `
+
 === Return a book : `return`
 
 Return a specified book to the catalogue +
 Format: `return INDEX` +
 Privilege Level: 2(Librarian)
+
 
 [NOTE]
 Can only return book that has been borrowed or reserved
@@ -353,6 +363,13 @@ Examples:
 * `list` +
 `return 2` +
 Return the 2nd book in the catalogue.
+
+[TIP]
+Press TAB after writing `return` to use the auto-complete function.
+
+Examples:
+
+* `return` --> (press TAB) --> `return 1 `
 
 === Reserve a book : `reserve`
 
@@ -374,7 +391,15 @@ Examples:
 * `list` +
 `reserve 2` +
 Reserve the 2nd book in the catalogue.
+
+[TIP]
+Press TAB after writing `reserve` to use the auto-complete function.
+
+Examples:
+
+* `reserve` --> (press TAB) --> `reserve 1 `
 // end::BorrowReturnReserve[]
+
 
 === Clearing all accounts : `cleara`
 
@@ -382,8 +407,18 @@ Clears all accounts from AccountList. +
 Format: `clear` +
 Privilege Level: 2(Librarian)
 
+****
+* Removes all the accounts from the list of accounts
+* Adds the default administrator account: admin admin
+****
+
 [NOTE]
 When an librarian clears the list of accounts, it is automatically logged out.
+
+Example:
+* `list` +
+`cleara` +
+All accounts removed from the list of accounts
 
 
 
@@ -399,11 +434,11 @@ Examples:
 * `addAccount n/Tom Madison m/A1234567T u/tom p/tom123 l/2`
 
 [TIP]
-Press TAB after writing `addAccount` to use the auto-complete function.
+Press TAB after writing `adda` to use the auto-complete function.
 
 Examples:
 
-* `addAccount` --> (press TAB) --> `addAccount n/ m/ u/ p/ l/ `
+* `adda` --> (press TAB) --> `adda n/ m/ u/ p/ l/ `
 
 === Deleting an account : `deletea` [TO BE IMPLEMENTED]
 
@@ -422,6 +457,13 @@ Examples:
 Deletes account linked to A1234567J --> (Jack Morgan).
 * `delete A0123456M` +
 Deletes the account linked to A0123456M.
+
+[TIP]
+Press TAB after writing `deletea` to use the auto-complete function.
+
+Examples:
+
+* `deletea` --> (press TAB) --> `deletea 1 `
 
 === Exiting the program : `exit`
 
