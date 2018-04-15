@@ -152,7 +152,9 @@ public class Catalogue implements ReadOnlyCatalogue {
 
     public void addTag(Tag t) throws UniqueTagList.DuplicateTagException {
         tags.add(t);
-    } /**
+    }
+     //@@author LeKhangTai
+     /**
      * @param target book that is selected by index to return
      * @param returnedBook duplicated book that will replace the original book
      * @throws BookNotFoundException
@@ -199,7 +201,7 @@ public class Catalogue implements ReadOnlyCatalogue {
         // in the book list.
         books.replaceReservedBook(target, syncedEditedBook);
     }
-
+    //@@author
     //// util methods
 
     @Override
