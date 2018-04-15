@@ -318,11 +318,12 @@ Clears all books from the catalogue. +
 Format: `clear` +
 Privilege Level: 2(Librarian)
 
-=== Borrow a book: `borrow`[TO BE IMPLEMENTED]
+// tag::Borrow[]
+=== Borrow a book: `borrow`
 
 Borrow the specified book from the catalogue. +
 Format: `borrow INDEX` +
-Privilege Level: 1(Student)
+Privilege Level: 2(Librarian)
 
 ****
 * Borrow the book at the specified `INDEX`.
@@ -340,8 +341,53 @@ Borrow the 2nd book in the catalogue.
 Press TAB after writing `borrow` to use the auto-complete function.
 
 Examples:
+* `borrow` -> (press TAB) -> `borrow 1`
 
-* `borrow` --> (press TAB) --> `borrow 1 `
+=== Return a book : `return`
+
+Return a specified book to the catalogue +
+Format: `return INDEX` +
+Privilege Level: 2(Librarian)
+
+[NOTE]
+Can only return book that has been borrowed
+
+****
+* Return the book at the specified `INDEX`.
+* The index refers to the index number shown in the most recent listing.
+* The index *must be a positive integer* 1, 2, 3, ...
+****
+
+[TIP]
+Press TAB after writing `return` to use the auto-complete function.
+
+Examples:
+
+* `return` -> (press TAB) -> `return 1`
+
+=== Reserve a book : `reserve`
+
+Renew a specific book from the Catalogue +
+Format: `reserve INDEX` +
+Privilege Level: 2(Librarian)
+
+[NOTE]
+Can only reserve book that has been borrowed
+
+****
+* Reserve the book at the specified `INDEX`.
+* The index refers to the index number shown in the most recent listing.
+* The index *must be a positive integer* 1, 2, 3, ...
+****
+
+[TIP]
+Press TAB after writing `reserve` to use the auto-complete function.
+
+Examples:
+
+* `reserve` -> (press TAB) -> `reserve 1`
+// end::Borrow[]
+
 
 === Clearing all accounts : `cleara`
 
@@ -362,49 +408,6 @@ Example:
 `cleara` +
 All accounts removed from the list of accounts
 
-=== Return a book : `return`[TO BE IMPLEMENTED]
-
-Return a specified book to the catalogue +
-Format: `return INDEX` +
-Privilege Level: 1(Student)
-
-[NOTE]
-Can only return book that has been borrowed
-
-****
-* Return the book at the specified `INDEX`.
-* The index refers to the index number shown in the most recent listing.
-* The index *must be a positive integer* 1, 2, 3, ...
-****
-
-[TIP]
-Press TAB after writing `return` to use the auto-complete function.
-
-Examples:
-
-* `return` --> (press TAB) --> `return 1 `
-
-=== Renew a book : `renew` [TO BE IMPLEMENTED]
-
-Renew a specific book from the Catalogue +
-Format: `renew INDEX` +
-Privilege Level: 1(Student)
-
-[NOTE]
-Can only renew book that has been borrowed
-
-****
-* Renew the book at the specified `INDEX`.
-* The index refers to the index number shown in the most recent listing.
-* The index *must be a positive integer* 1, 2, 3, ...
-****
-
-[TIP]
-Press TAB after writing `reserve` to use the auto-complete function.
-
-Examples:
-
-* `reserve` --> (press TAB) --> `reserve 1 `
 
 === Add an account : `addAccount` [TO BE IMPLEMENTED]
 

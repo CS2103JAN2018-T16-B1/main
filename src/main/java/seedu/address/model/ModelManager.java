@@ -119,7 +119,7 @@ public class ModelManager extends ComponentManager implements Model {
         accountList.setAccount(account, account);
         indicateAccountListChanged();
     }
-
+    //@@author LeKhangTai
     @Override
     public synchronized void returnBook(Book target, Book returnedBook) throws BookNotFoundException {
         catalogue.returnBook(target, returnedBook);
@@ -137,7 +137,7 @@ public class ModelManager extends ComponentManager implements Model {
         updateFilteredBookList(PREDICATE_SHOW_ALL_BOOKS);
         indicateCatalogueChanged();
     }
-
+    //@@author
     /**
      * Adds the initial admin account to the accountList
      */

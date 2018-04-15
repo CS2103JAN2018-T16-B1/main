@@ -13,29 +13,23 @@
 
 == Summary of contributions
 
-* *Major enhancement*: added the ability to add and delete account Commands and the add/delete command parsers
-** What it does: allows the user to add a new account into the existing account list and delete an account based on the username inside the account list.
-** Justification: This feature improves the product significantly because a librarian can create borrowers (with privilege level of student) and create new administrators (with privilege level of librarian). The database of students will allow the students of National University of Singapore to borrow, return and reserve a book of their desire inside the library.
-** Highlights:This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.
+* *Major enhancement*: Added the ability to borrow and return a book, using `borrow` and `return` commands respectively.
+** What it does: Allows the librarian to be able to change the availability status of the book when a student borrows/returns it. Only books that are available can be borrowed, and books that are borrowed or reserved can be returned.
+** Justification: This feature is of fundamental importance to this application. The Catalogue App  main purpose is to serve as a library application for the borrowing and returning of books for students. By implementing the borrow and return functions, the librarian will be able to keep track of the books availability.
+** Highlights:This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it involves addition of new commands to the existing application.
 ** Credits: NIL
 
-* *Minor enhancement*:
+* *Minor enhancement*: Added the ability to reserve a book, using `reserve` command.
+** What it does: Allows the librarian to be able to change the availability  status of the book to 'Reserved' when a student decides to reserve a book. Only borrowed book can be reserved.
+** Justification: This feature is of secondary importance as compared to `borrow` and `return` command, as reserving a book should be a additional feature that the library provides, up to the discretion of the librarian.
+** Highlights:This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it involves addition of new command to the existing application.
 
-* *Code contributed*:
+
+* *Code contributed*: https://github.com/CS2103JAN2018-T16-B1/main/tree/master/collated/functional[functional] https://github.com/CS2103JAN2018-T16-B1/main/tree/master/collated/test[test]
 
 * *Other contributions*:
 
-** Project management:
-
-** Enhancements to existing features:
-
-** Documentation:
-
-** Community:
-
-** Tools:
-
-_{you can add/remove categories in the list above}_
+** Documentation: Edited Logic Component Class and Sequence Diagrams. Also made appropriate changes to Logic Architecture Diagrams.
 
 == Contributions to the User Guide
 
@@ -44,9 +38,7 @@ _{you can add/remove categories in the list above}_
 |_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users._
 |===
 
-include::../UserGuide.adoc[tag=undoredo]
-
-include::../UserGuide.adoc[tag=dataencryption]
+include::../UserGuide.adoc[tag=Borrow]
 
 == Contributions to the Developer Guide
 
@@ -54,13 +46,7 @@ include::../UserGuide.adoc[tag=dataencryption]
 |_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._
 |===
 
-include::../DeveloperGuide.adoc[tag=undoredo]
+include::../DeveloperGuide.adoc[tag=Design]
 
-include::../DeveloperGuide.adoc[tag=dataencryption]
+include::../DeveloperGuide.adoc[tag=logicComponent]
 
-
-== PROJECT: PowerPointLabs
-
----
-
-_{Optionally, you may include other projects in your portfolio.}_
