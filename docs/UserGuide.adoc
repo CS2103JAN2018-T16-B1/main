@@ -107,11 +107,16 @@ From 1(Student) you are going back to 0(Guest) +
 Remember that when one logs out from your account, some commands (such as add a book for a librarian) won’t be available anymore. To be able to do them again, one will have to login again with his unique credentials.
 // end::loginout[]
 
+//tag::help[]
 === Viewing help : `help`
 
 Format: `help` +
+Format: kbd:[F1] +
 Privilege Level: 0(Guest)
+//end::help[]
 
+// tag::add[]
+[[Add]]
 === Adding a book: `add`
 
 
@@ -121,11 +126,20 @@ Privilege Level: 2(Librarian)
 [TIP]
 A book can have any number of tags (including 0)
 
+****
+* All of the fields must be provided.
+* The provided field must be valid.
+** TITLE must be alphanumeric.
+** AUTHOR must be alphanumeric.
+** ISBN must contain 13 numbers and be unique.
+** AVAIL must be `Available`, `Borrowed` or `Reserved`.
+****
+
 Examples:
 
 * `add t/Animal Farm a/George Orwell i/9780736692427 av/Borrowed`
-* `add t/Breaking Dawn tag/fiction av/Reserved a/Stephenie Meyer i/9780316067928 tag/young adults`
-
+* `add t/Breaking Dawn tag/fiction av/Borrowed a/Stephenie Meyer i/9780316067928 tag/young adults`
+// end::add[]
 [TIP]
 Press TAB after writing `add` to use the auto-complete function.
 
@@ -140,7 +154,7 @@ Shows a list of all books in the catalogue. +
 Format: `list` +
 Privilege Level: 0(Guest)
 
-
+// tag::edit[]
 === Editing a book : `edit`
 
 Edits an existing book in the catalogue. +
@@ -150,6 +164,7 @@ Privilege Level: 2(Librarian)
 ****
 * Edits the book at the specified `INDEX`. The index refers to the index number shown in the last book listing. The index *must be a positive integer* 1, 2, 3, ...
 * At least one of the optional fields must be provided.
+* The provided field must be valid. (Refer to <<Add>>)
 * Existing values will be updated to the input values.
 * When editing tags, the existing tags of the book will be removed i.e adding of tags is not cumulative.
 * You can remove all the book's tags by typing `t/` without specifying any tags after it.
@@ -157,17 +172,20 @@ Privilege Level: 2(Librarian)
 
 Examples:
 
-* `edit 1 i/9780736692426 av/Borrowed` +
+
+* `edit 1 i/9780736692426 av/Available` +
 Edits the isbn number and availability author of the 1st book to be `9780736692426` and `Available` respectively.
 * `edit 2 t/Breaking Dawn tag/` +
 Edits the title of the 2nd book to be `Breaking Dawn` and clears all existing tags.
+// end::edit[]
 
-TIP]
+[TIP]
 Press TAB after writing `edit` to use the auto-complete function.
 
 Examples:
 
 * `edit` --> (press TAB) --> `edit 1 t/ a/ i/ av/ tag/ `
+
 
 === Locating books by title: `find`
 
@@ -191,6 +209,7 @@ Returns `Animal Farm`
 * `find Animal Breaking California` +
 Returns any book having titles `Animal`, `Breaking`, or `California`
 
+// tag::delete[]
 === Deleting a book : `delete`
 
 Deletes the specified book from the catalogue. +
@@ -213,13 +232,15 @@ Deletes the 2nd book in the catalogue.
 `delete 1` +
 Deletes the 1st book in the results of the `find` command.
 
-TIP]
+[TIP]
 Press TAB after writing `delete` to use the auto-complete function.
 
 Examples:
 
 * `delete` --> (press TAB) --> `delete 1`
+// end::delete[]
 
+// tag::select[]
 === Selecting a book : `select`
 
 Selects the book identified by the index number used in the last book listing. +
@@ -227,7 +248,8 @@ Format: `select INDEX` +
 Privilege Level: 0(Guest)
 
 ****
-* Selects the book and loads the Google search page the book at the specified `INDEX`.
+* Selects the book and loads the Goodreads webpage of the book at the specified `INDEX` with internet connection.
+* Selects the book and display error message specified `INDEX` without internet connection.
 * The index refers to the index number shown in the most recent listing.
 * The index *must be a positive integer* `1, 2, 3, ...`
 ****
@@ -241,12 +263,13 @@ Selects the 2nd book in the catalogue.
 `select 1` +
 Selects the 1st book in the results of the `find` command.
 
-TIP]
+[TIP]
 Press TAB after writing `select` to use the auto-complete function.
 
 Examples:
 
-* `select` --> (press TAB) --> `select 1
+* `select` --> (press TAB) --> `select 1`
+// end::select[]
 
 === Listing entered commands : `history`
 
@@ -474,10 +497,11 @@ _{explain how the user can enable/disable data encryption}_
 *Q*: How do I transfer my data to another Computer? +
 *A*: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Catalogue folder.
 
+// tag::commandsummary[]
 == Command Summary
 
 * *Add* `add t/TITLE a/AUTHOR i/ISBN av/AVAIL [tag/TAG]...` +
-e.g. `add n/Animal Farm a/George Orwell i/9780736692427 av/Borrowed and Reserved t/political t/satire`
+e.g. `add n/Animal Farm a/George Orwell i/9780736692427 av/Borrowed t/political t/satire`
 * *Clear* : `clear`
 * *Delete* : `delete INDEX` +
 e.g. `delete 3`
@@ -504,3 +528,35 @@ e.g. `addAccount n/Jack Morgan m/A0123456J u/jack p/jack123 l/1`
 e.g. `delete A0123456M`
 * *cleara* : `cleara`
 
+[width="59%",cols="30%, 20%,<50%",options="header",]
+|=======================================================================
+|Privileges |Command |Format
+|All |*Help* |`help`
+|All |*Find Book* |`find KEYWORD [MORE_KEYWORDS]` +
+ e.g. `find Animal Dawn`
+|All |*List Book* |`list`
+|All |*Select Book* |`select INDEX` +
+ e.g.`select 2`
+|Librarian |*Add Book* |`add t/TITLE a/AUTHOR i/ISBN av/AVAIL [tag/TAG]...` +
+ e.g. `add n/Animal Farm a/George Orwell i/9780736692427 av/Borrowed t/political t/satire`
+|Librarian |*Delete Book* |`delete INDEX` +
+ e.g. `delete 3`
+|Librarian |*Edit Book* |`edit INDEX [n/TITLE] [a/AUTHOR] [i/ISBN] [av/AVAIL] [t/TAG]...` +
+ e.g. `edit 2 n/Animal Farm e/Available`
+|Librarian |*Borrow Book* |`borrow INDEX` +
+  e.g. `borrow 1`
+|Librarian |*Return Book* |`return INDEX` +
+  e.g. `return 2`
+|Librarian |*Reserve Book* |`reserve INDEX` +
+  e.g. `reserve 2`
+|Librarian |*Clear Catalogue* |`clear`
+|Librarian |*Add Account* |`addAccount n/NAME m/MATRICNUMBER u/USERNAME p/PASSWORD l/PRIVILEGE LEVEL` +
+ e.g. `addAccount n/Jack Morgan m/A0123456J u/jack p/jack123 l/1`
+|Librarian |*Delete Account* |`deletea USERNAME` +
+ e.g. `deletea A0123456M`
+|Librarian |*Clear Account List* |`cleara`
+|Librarian |*History* |`history`
+|Librarian |*Undo* |`undo`
+|Librarian |*Redo* |`redo`
+|=======================================================================
+// end::commandsummary[]

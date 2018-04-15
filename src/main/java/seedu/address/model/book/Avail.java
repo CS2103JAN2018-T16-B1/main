@@ -13,12 +13,10 @@ public class Avail {
     public static final String AVAILABLE = "Available";
     public static final String BORROWED = "Borrowed";
     public static final String RESERVED = "Reserved";
-    public static final String BORROWED_AND_RESERVED = "Borrowed and Reserved";
     public static final String MESSAGE_AVAIL_CONSTRAINTS = "Book availability should be one of the following:\n "
         + "1. " + AVAILABLE + "\n"
         + "2. " + BORROWED + "\n"
-        + "3. " + RESERVED + "\n"
-        + "4. " + BORROWED_AND_RESERVED + "\n";
+        + "3. " + RESERVED + "\n";
 
 
     public final String value;
@@ -40,7 +38,7 @@ public class Avail {
     public static boolean isValidAvail(String test) {
         return test.equals(AVAILABLE)
             || test.equals(BORROWED)
-            || test.equals(RESERVED) || test.equals(BORROWED_AND_RESERVED);
+            || test.equals(RESERVED);
     }
 
     //@@author

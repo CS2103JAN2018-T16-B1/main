@@ -198,6 +198,7 @@ Given below is the Sequence Diagram for interactions within the `Logic` componen
 image::DeleteBookSdForLogic.png[width="800"]
 // end::logicComponent[]
 
+//tag::model
 [[Design-Model]]
 === Model component
 
@@ -215,6 +216,7 @@ The `Model`,
 * maintains the privilege level
 * handles authentication
 * does not depend on any of the other three components.
+//end::model
 
 [[Design-Storage]]
 // tag::storagepic[]
@@ -892,6 +894,7 @@ _{More to be added}_
 2.  Catalogue shows a list of books
 3.  User requests to delete a specific book in the list
 4.  Catalogue deletes the book
+5.  Catalogue lists remaining books
 +
 Use case ends.
 
@@ -979,9 +982,103 @@ Use case ends.
 * 2a. The list is empty
 +
 Use case ends.
-// end::usecaseloginoutlistfind[]
 
 [discrete]
+// end::usecaseloginoutlistfind[]
+
+
+// tag::usecaseAddEditHelpSelect[]
+=== Use case: Add book
+
+*MSS*
+
+1.  User requests to add book with TITLE, AUTHOR, ISBN, AVAIL, [TAGS]
+2.  Catalogue adds book
+3.  Catalogue list books
++
+Use case ends.
+
+*Extensions*
+
+[none]
+* 1a. The TITLE or AUTHOR or ISBN or AVAIL is not valid or ISBN is not unique.
++
+[none]
+** 1a1. Catalogue shows an error message.
++
+
+Use case ends.
+
+[discrete]
+=== Use case: Edit book
+
+*MSS*
+
+1.  User requests to list books
+2.  Catalogue shows a list of books
+3.  User requests to edit a specific book in the list with [TITLE], [AUTHOR], [ISBN], [AVAIL], [TAGS]
+2.  Catalogue edit book
+3.  Catalogue list books
++
+Use case ends.
+
+*Extensions*
+
+[none]
+* 2a. The list is empty
++
+Use case ends.
+[none]
+* 3a. The given index is invalid or the [TITLE], [AUTHOR], [ISBN], [AVAIL], [TAGS] is invalid
++
+** 3a1. Catalogue shows an error message.
++
+Use case ends.
+
+[discrete]
+=== Use case: Help
+
+*MSS*
+
+1.  User requests to help
+2.  Help window pops out
++
+Use case ends.
+
+[discrete]
+=== Use case: Select
+
+*MSS*
+
+1.  User requests to list books
+2.  Catalogue shows a list of books
+3.  User requests to select books with index
+4.  Catalogue shows Goodreads search of the selected book.
++
+Use case ends.
+
+*Extensions*
+
+[none]
+
+* 2a. The list is empty
++
+Use case ends.
+[none]
+* 3a. The given index is invalid
++
+** 3a1. Catalogue shows an error message.
++
+[none]
+* 4a. There is no internet access.
++
+** 4a1. Catalogue shows an error message.
++
+
+
+[discrete]
+// end::usecaseAddEditHelpSelect[]
+
 == Use case: Borrow book
 
 *MSS*
@@ -994,6 +1091,7 @@ Use case ends.
 *Extensions*
 
 [none]
+
 * 2a. The book is already borrowed or reserved
 +
 Catalogue shows an error message.
@@ -1018,6 +1116,7 @@ Use case resumes at step 2.
 *Extensions*
 
 [none]
+
 * 2a. The book is already available
 +
 Catalogue shows an error message.
@@ -1042,6 +1141,7 @@ Use case resumes at step 2.
 *Extensions*
 
 [none]
+
 * 2a. The book is available
 +
 Catalogue shows an error message.
@@ -1052,7 +1152,6 @@ Catalogue shows an error message.
 ** 3a1. Catalogue shows an error message.
 +
 Use case resumes at step 2.
-
 
 [appendix]
 == Non Functional Requirements
@@ -1173,6 +1272,63 @@ _{ more test cases ... }_
    Expected: No book is deleted. Error details shown in the status message. Status bar remains the same.
 .. Other incorrect delete commands to try: `delete`, `delete x` (where x is larger than the list size) _{give more}_ +
    Expected: Similar to previous.
+
+// tag::manualtestAddEditHelpSelect[]
+=== Adding a book
+
+. Adding a book
+
+.. Prerequisites: Log in using the `log in` command.
+.. Test case: `add t/You a/Caroline Kepnes i/9781476785592 av/Borrowed` +
+   Expected: Book is added to the list at last index. Details of the added book shown in the status message. Timestamp in the status bar is updated.
+.. Test case: `add t/You a/Caroline Kepnes i/9781476785592 av/Borrowed` again +
+   Expected: No book is added. Error details shown in the status message. Status bar remains the same.
+.. Test case: `add t/Yo$ a/Caroline Kepnes i/0000000000001 av/Borrowed` again +
+   Expected: No book is added. Error details shown in the status message. Status bar remains the same.
+.. Test case: `add t/You a/Caroline Kepne$ i/0000000000002 av/Borrowed` again +
+   Expected: No book is added. Error details shown in the status message. Status bar remains the same.
+.. Test case: `add t/You a/Caroline Kepnes i/000000000000a av/Borrowed` again +
+    Expected: No book is added. Error details shown in the status message. Status bar remains the same.
+.. Test case: `add t/You a/Caroline Kepnes i/0000000000004 av/not sure` again +
+   Expected: No book is added. Error details shown in the status message. Status bar remains the same.
+.. Other incorrect add commands to try: `add`, `add t/`
+   Expected: Similar to previous.
+
+=== Editing a book
+
+. Editing a book while all books are listed
+
+.. Prerequisites: List all books using the `list` command. Multiple books in the list.
+.. Test case: `edit 1 t/Animal` +
+   Expected: Title of first book is edit in the list. Details of the edited book shown in the status message. Timestamp in the status bar is updated.
+.. Test case: `delete 0 t/Animal` +
+   Expected: No book is edited. Error details shown in the status message. Status bar remains the same.
+.. Other incorrect delete commands to try: `edit t/Animal`, `edit x t/Animal` (where x is larger than the list size) +
+   Expected: Similar to previous.
+
+=== Help
+
+. Display Help window
+
+.. Test case: `help` +
+   Expected: Help window pops out. Action shown in the status message. Status bar remains the same.
+.. Test case: kbd:[F1] +
+   Expected: Help window pops out. Action shown in the status message. Status bar remains the same.
+
+=== Selecting a book
+
+. Selecting a book while all books are listed
+
+.. Prerequisites: List all books using the `list` command. Multiple books in the list.
+.. Test case: `select 1` (With internet) +
+   Expected: First book is selected from the list. Action shown in the status message. Goodreads webpage of the book is loaded in the information section. Timestamp in the status bar is updated.
+.. Test case: `select 1` (Without internet) +
+   Expected: First book is selected from the list. Action shown in the status message. Error message shown in information system. Timestamp in the status bar is updated.
+.. Test case: `select 0` +
+   Expected: No book is selected. Error details shown in the status message. Status bar remains the same.
+.. Other incorrect delete commands to try: `select`, `select x` (where x is larger than the list size) +
+   Expected: Similar to previous.
+// end::manualtestAddEditHelpSelect[]
 
 _{ more test cases ... }_
 

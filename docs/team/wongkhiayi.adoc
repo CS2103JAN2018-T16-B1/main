@@ -10,32 +10,22 @@
 
 * This is a desktop Catalogue application. It has a GUI but most of the user interactions happen using a CLI (Command Line Interface).
 * It is a Java application intended for librarians, students and guests using the library.
+* We started the project based on an AddressBook sample application(https://github.com/nus-cs2103-AY1718S2/addressbook-level4) that is around 10KLoC.
 
 == Summary of contributions
 
-* *Major enhancement*:
-** What it does:
-** Justification:
-** Highlights:
-** Credits:
+* *Major enhancement*: Added the model for catalogue for books and its relevant tests in command, model, system and xml.
+** What it does: Allows the app to store books.
+** Justification: This makes the program relevant to our project and rejects invalid inputs to keep the Catalogue clean.
+** Highlights: This enhancement is related to all components of the program including the data files and tests, it required a careful analysis of the whole system before it is implemented.
 
-* *Minor enhancement*:
+* *Minor enhancement*: Updated message outputs and sample data.
 
-* *Code contributed*:
+* *Code contributed*: https://github.com/CS2103JAN2018-T16-B1/main/blob/master/collated/functional/khiayi.md[Functional] | https://github.com/CS2103JAN2018-T16-B1/main/blob/master/collated/test/khiayi.md[Test]
 
-* *Other contributions*:
+** Project management: set up Travis and Coverall in team repo.
 
-** Project management:
-
-** Enhancements to existing features:
-
-** Documentation:
-
-** Community:
-
-** Tools:
-
-_{you can add/remove categories in the list above}_
+** Documentation: Updated documentation of my enhancements
 
 == Contributions to the User Guide
 
@@ -44,23 +34,23 @@ _{you can add/remove categories in the list above}_
 |_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users._
 |===
 
-include::../UserGuide.adoc[tag=undoredo]
+include::../UserGuide.adoc[tag=add]
 
-include::../UserGuide.adoc[tag=dataencryption]
+include::../UserGuide.adoc[tag=edit]
+
+include::../UserGuide.adoc[tag=help]
+
+include::../UserGuide.adoc[tag=select]
+
+include::../UserGuide.adoc[tag=commandsummary]
 
 == Contributions to the Developer Guide
 
 |===
 |_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._
 |===
+include::../DeveloperGuide.adoc[tag=model]
 
-include::../DeveloperGuide.adoc[tag=undoredo]
+include::../DeveloperGuide.adoc[tag=usecaseAddEditHelpSelect]
 
-include::../DeveloperGuide.adoc[tag=dataencryption]
-
-
-== PROJECT: PowerPointLabs
-
----
-
-_{Optionally, you may include other projects in your portfolio.}_
+include::../DeveloperGuide.adoc[tag=manualtestAddEditHelpSelect]

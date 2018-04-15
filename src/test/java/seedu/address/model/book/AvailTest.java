@@ -34,6 +34,5 @@ public class AvailTest {
         assertTrue(Avail.isValidAvail("Reserved"));  // Reserved
         assertTrue(Avail.isValidAvail("Borrowed"));  // Borrowed
         assertTrue(Avail.isValidAvail("Available"));  // Available
-        assertTrue(Avail.isValidAvail("Borrowed and Reserved")); // Borrowed and Reserved
     }
 }
